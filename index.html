@@ -1,728 +1,372 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  
+  <!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="fav.png?v=2">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DevAnalytiq – Transform Your Future with Python & Data Skills</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta name="description" content="DevAnalytiq helps students learn Python, Data Engineering, Machine Learning, and Full Stack Development with real-world projects. Become industry-ready with practical training and mentorship.">
+<meta name="keywords" content="Python training, Data Engineering course, Machine Learning training, Data Science for students, Full Stack development course, AI training India, job ready skills, DevAnalytiq">
+<meta name="author" content="Lakshmana Sai Karumuri">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://devanalytiq.web.app/">
+<meta property="og:title" content="DevAnalytiq | Learn Python & Data Skills for Real Jobs">
+<meta property="og:description" content="Learn Python, Data Engineering, and Machine Learning with real projects and become job-ready.">
+<meta property="og:image" content="https://devanalytiq.web.app/preview.png">
+<meta property="og:url" content="https://devanalytiq.web.app/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="DevAnalytiq | Learn Python & Data Skills">
+<meta name="twitter:description" content="Build real projects and become industry-ready with DevAnalytiq.">
+<meta name="twitter:image" content="https://devanalytiq.web.app/preview.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "DevAnalytiq",
+  "url": "https://devanalytiq.web.app/",
+  "logo": "https://devanalytiq.web.app/logo.png",
+  "description": "DevAnalytiq provides practical training in Python, Data Engineering, Machine Learning, and Full Stack Development.",
+  "founder": {
+    "@type": "Person",
+    "name": "Lakshmana Sai Karumuri",
+    "sameAs": ["https://www.linkedin.com/in/lakshmana-sai-karumuri/","http://github.com/lakshmanasai5421/"]
+  },
+  "sameAs": ["https://www.linkedin.com/in/lakshmana-sai-karumuri/","http://github.com/lakshmanasai5421/"]
+}
+</script>
+
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 <style>
-
-
-
-  
   :root {
-    --bg-deep: #050810;
-    --bg-card: #0c1022;
-    --bg-card2: #111828;
-    --accent-1: #6c63ff;
-    --accent-2: #00d4ff;
-    --accent-3: #ff6584;
-    --accent-gold: #f4b942;
-    --text-primary: #eef2ff;
-    --text-muted: #8892b0;
-    --border: rgba(108, 99, 255, 0.18);
-    --glow: 0 0 40px rgba(108,99,255,0.25);
+    --bg-deep: #f5f7fc;
+    --bg-card: #ffffff;
+    --bg-card2: #eef1f8;
+    --accent-1: #5b52e8;
+    --accent-2: #0099cc;
+    --accent-3: #e83565;
+    --accent-gold: #c8860a;
+    --text-primary: #1a1f36;
+    --text-muted: #5a6480;
+    --border: rgba(91,82,232,0.15);
+    --glow: 0 4px 24px rgba(91,82,232,0.08);
     --radius: 16px;
     --radius-lg: 24px;
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   .trainer-avatar {
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(255,255,255,0.1);
-}
+    width: 110px; height: 110px;
+    border-radius: 50%; overflow: hidden;
+    border: 3px solid rgba(91,82,232,0.15);
+  }
+  .trainer-avatar img { width: 100%; height: 100%; object-fit: cover; }
 
-.trainer-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-body {
-  background: var(--bg-deep);
-   font-family: 'Outfit', sans-serif;
-  color: var(--text-primary);
-  font-weight: 400;
-  overflow-x: hidden;
-  line-height: 1.7;
-}
+  body {
+    background: var(--bg-deep);
+    font-family: 'Outfit', sans-serif;
+    color: var(--text-primary);
+    font-weight: 400;
+    overflow-x: hidden;
+    line-height: 1.7;
+  }
+  h1,h2,h3,h4,h5 { font-family: 'Outfit', sans-serif; }
 
-h1, h2, h3, h4, h5 {
-   font-family: 'Outfit', sans-serif;
-}
-
-  /* ─── SCROLLBAR ─── */
   ::-webkit-scrollbar { width: 5px; }
   ::-webkit-scrollbar-track { background: var(--bg-deep); }
   ::-webkit-scrollbar-thumb { background: var(--accent-1); border-radius: 99px; }
 
-  /* ─── NAV ─── */
+  /* NAV */
   .navbar {
-    background: rgba(5,8,16,0.8);
+    background: rgba(245,247,252,0.92);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
     padding: 14px 0;
-    position: sticky;
-    top: 0;
-    z-index: 999;
+    position: sticky; top: 0; z-index: 999;
     transition: background 0.3s;
+    box-shadow: 0 2px 16px rgba(91,82,232,0.06);
   }
   .navbar-brand {
-    font-family: 'Outfit', sans-serif;
-    font-weight: 700;
-    font-size: 1.9rem;
+    font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1.9rem;
     background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
     letter-spacing: -0.5px;
   }
-  .nav-link {
-    color: var(--text-muted) !important;
-    font-weight: 500;
-    font-size: 0.9rem;
-    letter-spacing: 0.3px;
-    transition: color 0.2s;
-    padding: 6px 14px !important;
-  }
+  .nav-link { color: var(--text-muted) !important; font-weight: 500; font-size: 0.9rem; letter-spacing: 0.3px; transition: color 0.2s; padding: 6px 14px !important; }
   .nav-link:hover { color: var(--text-primary) !important; }
   .nav-cta {
-    background: linear-gradient(135deg, var(--accent-1), #8a63ff);
-    color: #fff !important;
-    border-radius: 30px;
-    padding: 7px 22px !important;
-    font-weight: 600;
+    background: linear-gradient(135deg, var(--accent-1), #7a6fff);
+    color: #fff !important; border-radius: 30px; padding: 7px 22px !important; font-weight: 600;
     transition: transform 0.2s, box-shadow 0.2s !important;
   }
-  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(108,99,255,0.4) !important; }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(91,82,232,0.3) !important; }
 
-  /* ─── HERO ─── */
+  /* HERO */
   .hero {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding: 120px 0 80px;
+    min-height: 100vh; display: flex; align-items: center;
+    position: relative; overflow: hidden; padding: 120px 0 80px;
   }
   .hero-bg {
     position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 80% at 20% 50%, rgba(108,99,255,0.18) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(0,212,255,0.12) 0%, transparent 55%),
-                radial-gradient(ellipse 50% 50% at 60% 80%, rgba(255,101,132,0.08) 0%, transparent 50%);
+    background:
+      radial-gradient(ellipse 80% 80% at 20% 50%, rgba(91,82,232,0.10) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 60% at 80% 20%, rgba(0,153,204,0.07) 0%, transparent 55%),
+      radial-gradient(ellipse 50% 50% at 60% 80%, rgba(232,53,101,0.04) 0%, transparent 50%);
   }
   .hero-grid {
     position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(108,99,255,0.06) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(108,99,255,0.06) 1px, transparent 1px);
+    background-image: linear-gradient(rgba(91,82,232,0.06) 1px, transparent 1px), linear-gradient(90deg, rgba(91,82,232,0.06) 1px, transparent 1px);
     background-size: 60px 60px;
     mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
   }
   .hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(108,99,255,0.12);
-    border: 1px solid rgba(108,99,255,0.3);
-    border-radius: 30px;
-    padding: 6px 16px;
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: #a89cff;
-    letter-spacing: 0.5px;
-    margin-bottom: 28px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(91,82,232,0.08); border: 1px solid rgba(91,82,232,0.22);
+    border-radius: 30px; padding: 6px 16px; font-size: 0.82rem; font-weight: 600;
+    color: var(--accent-1); letter-spacing: 0.5px; margin-bottom: 28px;
     animation: fadeUp 0.8s ease both;
   }
   .hero-badge span { width: 7px; height: 7px; background: var(--accent-1); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
   .hero h1 {
-    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
-    font-weight: 800;
-    line-height: 1.13;
-    letter-spacing: -1.5px;
-    margin-bottom: 20px;
-    animation: fadeUp 0.9s 0.1s ease both;
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem); font-weight: 800; line-height: 1.13;
+    letter-spacing: -1.5px; margin-bottom: 20px; animation: fadeUp 0.9s 0.1s ease both;
   }
   .hero h1 .grad {
-    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 60%, #a0f0ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 60%, #006fa0 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
-  .hero-sub {
-    font-size: 1.15rem;
-    color: var(--text-muted);
-    max-width: 540px;
-    margin-bottom: 38px;
-    animation: fadeUp 1s 0.2s ease both;
-    font-weight: 400;
-  }
-  .btn-primary-grad {
-    background: linear-gradient(135deg, var(--accent-1), #8a63ff);
-    color: #fff;
-    border: none;
-    border-radius: 50px;
-    padding: 14px 36px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: 0.3px;
-    cursor: pointer;
-    transition: transform 0.25s, box-shadow 0.25s;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  .btn-primary-grad:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(108,99,255,0.45); color: #fff; }
-  .btn-outline-grad {
-    background: transparent;
-    color: var(--text-primary);
-    border: 1.5px solid rgba(108,99,255,0.45);
-    border-radius: 50px;
-    padding: 13px 32px;
-    font-family: 'Syne', sans-serif;
-    font-weight: 600;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: border-color 0.25s, background 0.25s, transform 0.25s;
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    text-decoration: none;
-  }
-  .btn-outline-grad:hover { border-color: var(--accent-1); background: rgba(108,99,255,0.1); transform: translateY(-2px); color: #fff; }
+  .hero-sub { font-size: 1.15rem; color: var(--text-muted); max-width: 540px; margin-bottom: 38px; animation: fadeUp 1s 0.2s ease both; font-weight: 400; }
 
-  .hero-stats {
-    display: flex;
-    gap: 32px;
-    flex-wrap: wrap;
-    margin-top: 52px;
-    animation: fadeUp 1.1s 0.35s ease both;
+  .btn-primary-grad {
+    background: linear-gradient(135deg, var(--accent-1), #7a6fff); color: #fff;
+    border: none; border-radius: 50px; padding: 14px 36px;
+    font-weight: 700; font-size: 1rem; letter-spacing: 0.3px; cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
   }
+  .btn-primary-grad:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(91,82,232,0.28); color: #fff; }
+  .btn-outline-grad {
+    background: transparent; color: var(--text-primary);
+    border: 1.5px solid rgba(91,82,232,0.30); border-radius: 50px; padding: 13px 32px;
+    font-weight: 600; font-size: 1rem; cursor: pointer;
+    transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    display: inline-flex; align-items: center; gap: 10px; text-decoration: none;
+  }
+  .btn-outline-grad:hover { border-color: var(--accent-1); background: rgba(91,82,232,0.07); transform: translateY(-2px); color: var(--text-primary); }
+
+  .hero-stats { display: flex; gap: 32px; flex-wrap: wrap; margin-top: 52px; animation: fadeUp 1.1s 0.35s ease both; }
   .stat-item { text-align: left; }
   .stat-num {
-    font-family: 'Syne', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
+    font-size: 2rem; font-weight: 800;
     background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
   }
   .stat-label { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.5px; }
 
-  .hero-visual {
-    position: relative;
-    animation: fadeLeft 1s 0.3s ease both;
-  }
+  .hero-visual { position: relative; animation: fadeLeft 1s 0.3s ease both; }
   .hero-card-main {
-    background: linear-gradient(135deg, var(--bg-card) 0%, #12182e 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 32px;
-    box-shadow: var(--glow);
-    position: relative;
-    overflow: hidden;
+    background: #ffffff; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 32px;
+    box-shadow: 0 8px 40px rgba(91,82,232,0.10);
+    position: relative; overflow: hidden;
   }
   .hero-card-main::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 3px;
+    content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 3px;
     background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
     border-radius: var(--radius-lg) var(--radius-lg) 0 0;
   }
   .code-block {
-    background: #080d1a;
-    border-radius: 10px;
-    padding: 20px 22px;
-    font-family: 'Courier New', monospace;
-    font-size: 0.82rem;
-    line-height: 1.9;
-    border: 1px solid rgba(255,255,255,0.06);
+    background: #f4f6fc; border-radius: 10px; padding: 20px 22px;
+    font-family: 'Courier New', monospace; font-size: 0.82rem; line-height: 1.9;
+    border: 1px solid rgba(91,82,232,0.10);
   }
-  .code-kw { color: #c792ea; }
-  .code-fn { color: #82aaff; }
-  .code-str { color: #c3e88d; }
-  .code-cm { color: #546e7a; }
+  .code-kw { color: #7c3aed; }
+  .code-fn { color: #1d4ed8; }
+  .code-str { color: #15803d; }
+  .code-cm { color: #94a3b8; }
   .code-num { color: var(--accent-gold); }
 
   .floating-pill {
-    position: absolute;
-    background: rgba(12,16,34,0.9);
-    border: 1px solid var(--border);
-    backdrop-filter: blur(12px);
-    border-radius: 40px;
-    padding: 8px 16px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-    animation: floatY 3s ease-in-out infinite;
+    position: absolute; background: rgba(255,255,255,0.97);
+    border: 1px solid var(--border); backdrop-filter: blur(12px);
+    border-radius: 40px; padding: 8px 16px; font-size: 0.75rem; font-weight: 600;
+    display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 20px rgba(91,82,232,0.12);
+    animation: floatY 3s ease-in-out infinite; color: var(--text-primary);
   }
   .floating-pill.p1 { top: -18px; right: 30px; animation-delay: 0s; }
   .floating-pill.p2 { bottom: 20px; left: -20px; animation-delay: 1s; }
   .pill-dot { width: 8px; height: 8px; border-radius: 50%; }
 
-  /* ─── SECTION COMMON ─── */
+  /* SECTIONS */
   .section { padding: 100px 0; }
-  .section-alt { background: rgba(12,16,34,0.5); }
+  .section-alt { background: #edf0f9; }
 
   .section-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--accent-1);
-    margin-bottom: 14px;
+    display: inline-flex; align-items: center; gap: 8px;
+    font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--accent-1); margin-bottom: 14px;
   }
-  .section-tag::before {
-    content: '';
-    width: 20px; height: 2px;
-    background: var(--accent-1);
-    border-radius: 2px;
-  }
-  .section-title {
-    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
-    font-weight: 800;
-    letter-spacing: -1px;
-    line-height: 1.2;
-    margin-bottom: 16px;
-  }
-  .section-sub {
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    max-width: 560px;
-  }
+  .section-tag::before { content: ''; width: 20px; height: 2px; background: var(--accent-1); border-radius: 2px; }
+  .section-title { font-size: clamp(1.9rem,3.5vw,2.8rem); font-weight: 800; letter-spacing: -1px; line-height: 1.2; margin-bottom: 16px; color: var(--text-primary); }
+  .section-sub { color: var(--text-muted); font-size: 1.05rem; max-width: 560px; }
 
-  /* ─── ABOUT ─── */
+  /* ABOUT */
   .about-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 48px 44px;
-    position: relative;
-    overflow: hidden;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 48px 44px;
+    position: relative; overflow: hidden; box-shadow: var(--glow);
   }
   .about-card::after {
-    content: '';
-    position: absolute;
-    bottom: -60px; right: -60px;
+    content: ''; position: absolute; bottom: -60px; right: -60px;
     width: 220px; height: 220px;
-    background: radial-gradient(circle, rgba(108,99,255,0.15), transparent 70%);
-    border-radius: 50%;
+    background: radial-gradient(circle, rgba(91,82,232,0.07), transparent 70%); border-radius: 50%;
   }
   .about-highlight {
-    border-left: 3px solid var(--accent-1);
-    padding-left: 20px;
-    margin: 24px 0;
-    color: var(--text-muted);
-    font-size: 1.05rem;
-    font-style: italic;
+    border-left: 3px solid var(--accent-1); padding-left: 20px; margin: 24px 0;
+    color: var(--text-muted); font-size: 1.05rem; font-style: italic;
   }
   .skill-tag {
-    display: inline-block;
-    background: rgba(108,99,255,0.12);
-    border: 1px solid rgba(108,99,255,0.25);
-    border-radius: 30px;
-    padding: 5px 16px;
-    font-size: 0.8rem;
-    font-weight: 600;
-    color: #a89cff;
-    margin: 4px;
-    transition: background 0.2s, transform 0.2s;
+    display: inline-block; background: rgba(91,82,232,0.08); border: 1px solid rgba(91,82,232,0.18);
+    border-radius: 30px; padding: 5px 16px; font-size: 0.8rem; font-weight: 600;
+    color: var(--accent-1); margin: 4px; transition: background 0.2s, transform 0.2s;
   }
-  .skill-tag:hover { background: rgba(108,99,255,0.22); transform: translateY(-2px); }
+  .skill-tag:hover { background: rgba(91,82,232,0.15); transform: translateY(-2px); }
 
-  /* ─── TRAINER ─── */
+  /* TRAINER */
   .trainer-card {
-    background: linear-gradient(145deg, var(--bg-card) 0%, #0e1629 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 40px;
-    display: flex;
-    gap: 36px;
-    align-items: flex-start;
-    box-shadow: var(--glow);
-    position: relative;
-    overflow: hidden;
+    background: #ffffff; border: 1px solid var(--border);
+    border-radius: var(--radius-lg); padding: 40px;
+    display: flex; gap: 36px; align-items: flex-start;
+    box-shadow: var(--glow); position: relative; overflow: hidden;
     transition: transform 0.3s, box-shadow 0.3s;
   }
-  .trainer-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(108,99,255,0.25); }
+  .trainer-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(91,82,232,0.13); }
   .trainer-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 3px;
+    content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 3px;
     background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
   }
-  .trainer-avatar {
-    width: 110px; height: 110px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 2.4rem;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    color: #fff;
-    flex-shrink: 0;
-    position: relative;
-    border: 3px solid rgba(255,255,255,0.1);
-  }
-  .trainer-avatar::after {
-    content: '✓';
-    position: absolute;
-    bottom: 2px; right: 2px;
-    width: 26px; height: 26px;
-    background: #00d4ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.7rem;
-    font-weight: 700;
-    color: #000;
-    border: 2px solid var(--bg-card);
-  }
-  .trainer-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
-  .trainer-role {
-    font-size: 0.85rem;
-    color: var(--accent-2);
-    font-weight: 600;
-    letter-spacing: 0.5px;
-    margin-bottom: 14px;
-  }
-  .exp-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    background: rgba(0,212,255,0.1);
-    border: 1px solid rgba(0,212,255,0.25);
-    border-radius: 30px;
-    padding: 4px 14px;
-    font-size: 0.78rem;
-    font-weight: 700;
-    color: var(--accent-2);
-    margin-right: 8px;
-    margin-bottom: 8px;
-  }
-  .trainer-stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-top: 20px;
-  }
-  .t-stat {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px;
-    text-align: center;
-  }
-  .t-stat-num { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-  .t-stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+  .trainer-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; color: var(--text-primary); }
+  .trainer-role { font-size: 0.85rem; color: var(--accent-2); font-weight: 600; letter-spacing: 0.5px; margin-bottom: 14px; }
 
-  /* ─── ROADMAP ─── */
+  /* ROADMAP */
   .roadmap-section { position: relative; }
   .roadmap-phase {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 32px 36px;
-    margin-bottom: 24px;
-    position: relative;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 32px 36px; margin-bottom: 24px;
+    position: relative; box-shadow: var(--glow);
     transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
   }
-  .roadmap-phase:hover { border-color: var(--accent-1); box-shadow: 0 8px 40px rgba(108,99,255,0.15); transform: translateX(4px); }
-  .phase-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
+  .roadmap-phase:hover { border-color: var(--accent-1); box-shadow: 0 8px 40px rgba(91,82,232,0.12); transform: translateX(4px); }
+  .phase-header { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }
   .phase-num {
-    width: 44px; height: 44px;
-    border-radius: 12px;
-    background: linear-gradient(135deg, var(--accent-1), #8a63ff);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Syne', sans-serif;
-    font-weight: 800;
-    font-size: 1.1rem;
-    flex-shrink: 0;
+    width: 44px; height: 44px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-1), #7a6fff);
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 800; font-size: 1.1rem; flex-shrink: 0; color: #fff;
   }
-  .phase-title-text { font-size: 1.15rem; font-weight: 700; }
+  .phase-title-text { font-size: 1.15rem; font-weight: 700; color: var(--text-primary); }
   .phase-subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
   .roadmap-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
-    font-size: 0.9rem;
-    color: #c8d0e7;
+    display: flex; align-items: flex-start; gap: 12px; padding: 8px 0;
+    border-bottom: 1px solid rgba(91,82,232,0.06);
+    font-size: 0.9rem; color: #3d4760;
   }
   .roadmap-item:last-child { border-bottom: none; }
   .roadmap-item .num-badge {
-    min-width: 26px; height: 26px;
-    background: rgba(108,99,255,0.15);
-    border: 1px solid rgba(108,99,255,0.3);
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 0.72rem;
-    font-weight: 700;
-    color: var(--accent-1);
-    flex-shrink: 0;
-    margin-top: 1px;
+    min-width: 26px; height: 26px; background: rgba(91,82,232,0.08);
+    border: 1px solid rgba(91,82,232,0.18); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.72rem; font-weight: 700; color: var(--accent-1);
+    flex-shrink: 0; margin-top: 1px;
   }
-  .roadmap-connector {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    margin: 0 auto;
-    padding: 6px 0;
-    width: 30px;
-  }
-  .connector-line { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--accent-1), rgba(108,99,255,0)); }
+  .roadmap-connector { display: flex; flex-direction: column; align-items: center; margin: 0 auto; padding: 6px 0; width: 30px; }
+  .connector-line { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--accent-1), rgba(91,82,232,0)); }
 
   .azure-card {
-    background: linear-gradient(135deg, rgba(0,120,212,0.12) 0%, rgba(108,99,255,0.1) 100%);
-    border: 1px solid rgba(0,120,212,0.3);
-    border-radius: var(--radius);
-    padding: 28px 32px;
-    margin-top: 24px;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, rgba(0,120,212,0.06), rgba(91,82,232,0.04));
+    border: 1px solid rgba(0,120,212,0.18); border-radius: var(--radius); padding: 28px 32px;
+    margin-top: 24px; position: relative; overflow: hidden;
   }
   .azure-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: -1px; right: -1px;
-    height: 3px;
+    content: ''; position: absolute; top: -1px; left: -1px; right: -1px; height: 3px;
     background: linear-gradient(90deg, #0078d4, var(--accent-1));
   }
 
-  /* ─── FULLSTACK ─── */
-  .fullstack-section {
-    background: linear-gradient(135deg, rgba(108,99,255,0.08) 0%, rgba(0,212,255,0.05) 100%);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    padding: 60px;
-    position: relative;
-    overflow: hidden;
-  }
-  .fullstack-section::before {
-    content: '';
-    position: absolute;
-    top: -100px; right: -100px;
-    width: 400px; height: 400px;
-    background: radial-gradient(circle, rgba(0,212,255,0.08), transparent 70%);
-    border-radius: 50%;
-  }
-  .fs-item {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 14px 20px;
-    background: rgba(255,255,255,0.03);
-    border: 1px solid rgba(255,255,255,0.06);
-    border-radius: 12px;
-    margin-bottom: 12px;
-    font-weight: 500;
-    font-size: 0.95rem;
-    transition: background 0.2s, border-color 0.2s, transform 0.2s;
-    cursor: default;
-  }
-  .fs-item:hover { background: rgba(108,99,255,0.1); border-color: rgba(108,99,255,0.3); transform: translateX(6px); }
-  .fs-icon {
-    width: 36px; height: 36px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1rem;
-    flex-shrink: 0;
-  }
-
-  /* ─── FEATURES ─── */
+  /* FEATURES */
   .feature-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 32px 28px;
-    height: 100%;
+    background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 32px 28px; height: 100%; box-shadow: var(--glow);
     transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
-  .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(108,99,255,0.2); border-color: rgba(108,99,255,0.4); }
-  .feature-icon {
-    width: 56px; height: 56px;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    margin-bottom: 18px;
-  }
-  .feature-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+  .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(91,82,232,0.12); border-color: rgba(91,82,232,0.28); }
+  .feature-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 18px; }
+  .feature-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; color: var(--text-primary); }
   .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
-  .feature-card::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 3px;
-    opacity: 0;
-    border-radius: 0 0 var(--radius) var(--radius);
-    transition: opacity 0.3s;
-  }
+  .feature-card::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 3px; opacity: 0; border-radius: 0 0 var(--radius) var(--radius); transition: opacity 0.3s; }
   .feature-card:hover::after { opacity: 1; }
   .f1::after { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); }
-  .f2::after { background: linear-gradient(90deg, var(--accent-2), #00ff88); }
+  .f2::after { background: linear-gradient(90deg, var(--accent-2), #009944); }
   .f3::after { background: linear-gradient(90deg, var(--accent-gold), var(--accent-3)); }
   .f4::after { background: linear-gradient(90deg, var(--accent-3), var(--accent-1)); }
-  .f5::after { background: linear-gradient(90deg, #00ff88, var(--accent-2)); }
+  .f5::after { background: linear-gradient(90deg, #009944, var(--accent-2)); }
 
-  /* ─── INSPIRATION ─── */
+  /* INSPIRE */
   .inspire-section { background: var(--bg-deep); padding: 80px 0; }
-  .inspire-marquee {
-    overflow: hidden;
-    position: relative;
-    padding: 16px 0;
-  }
-  .inspire-marquee::before, .inspire-marquee::after {
-    content: '';
-    position: absolute;
-    top: 0; bottom: 0;
-    width: 120px;
-    z-index: 2;
-  }
+  .inspire-marquee { overflow: hidden; position: relative; padding: 16px 0; }
+  .inspire-marquee::before, .inspire-marquee::after { content: ''; position: absolute; top: 0; bottom: 0; width: 120px; z-index: 2; }
   .inspire-marquee::before { left: 0; background: linear-gradient(to right, var(--bg-deep), transparent); }
   .inspire-marquee::after { right: 0; background: linear-gradient(to left, var(--bg-deep), transparent); }
-  .marquee-track {
-    display: flex;
-    gap: 0;
-    animation: marquee 22s linear infinite;
-    width: max-content;
-  }
+  .marquee-track { display: flex; gap: 0; animation: marquee 22s linear infinite; width: max-content; }
   .inspire-quote-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    padding: 22px 32px;
-    margin: 0 12px;
-    white-space: nowrap;
-    display: flex;
-    align-items: center;
-    gap: 14px;
+    background: var(--bg-card); border: 1px solid var(--border);
+    border-radius: var(--radius); padding: 22px 32px; margin: 0 12px;
+    white-space: nowrap; display: flex; align-items: center; gap: 14px; box-shadow: var(--glow);
   }
   .q-icon { font-size: 1.4rem; }
-  .q-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+  .q-text { font-weight: 700; font-size: 1rem; color: var(--text-primary); }
   .q-accent { color: var(--accent-1); }
 
-  /* ─── CTA ─── */
-  .cta-section {
-    padding: 100px 0;
-    position: relative;
-    overflow: hidden;
-  }
-  .cta-bg {
-    position: absolute; inset: 0;
-    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(108,99,255,0.18) 0%, transparent 65%);
-  }
+  /* CTA */
+  .cta-section { padding: 100px 0; position: relative; overflow: hidden; }
+  .cta-bg { position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(91,82,232,0.08) 0%, transparent 65%); }
   .cta-card {
-    background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(0,212,255,0.07));
-    border: 1px solid rgba(108,99,255,0.3);
-    border-radius: 28px;
-    padding: 72px 60px;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
+    background: linear-gradient(135deg, rgba(91,82,232,0.06), rgba(0,153,204,0.04));
+    border: 1px solid rgba(91,82,232,0.18); border-radius: 28px; padding: 72px 60px;
+    text-align: center; position: relative; overflow: hidden;
+    box-shadow: 0 8px 48px rgba(91,82,232,0.07);
   }
   .cta-card::before {
-    content: '';
-    position: absolute;
-    top: -1px; left: 20%; right: 20%;
-    height: 2px;
+    content: ''; position: absolute; top: -1px; left: 20%; right: 20%; height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent-1), var(--accent-2), transparent);
   }
-  .cta-card h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+  .cta-card h2 { font-size: clamp(1.8rem,3.5vw,2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; color: var(--text-primary); }
   .cta-card p { color: var(--text-muted); font-size: 1.05rem; max-width: 460px; margin: 0 auto 36px; }
 
-  /* ─── FOOTER ─── */
-  .footer {
-    background: rgba(5,8,16,0.95);
-    border-top: 1px solid var(--border);
-    padding: 48px 0 32px;
-  }
-  .footer-brand { font-family: 'sans-serif', sans-serif; font-weight: 800; font-size: 1.4rem; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  /* FOOTER */
+  .footer { background: #e8ecf6; border-top: 1px solid var(--border); padding: 48px 0 32px; }
+  .footer-brand { font-weight: 800; font-size: 1.4rem; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
   .footer-tagline { color: var(--text-muted); font-size: 0.85rem; margin-top: 6px; }
-  .social-btn {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    border: 1px solid var(--border);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    transition: background 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
-    margin-right: 8px;
-  }
-  .social-btn:hover { background: var(--accent-1); color: #fff; border-color: var(--accent-1); transform: translateY(-3px); }
   .footer-divider { border-color: var(--border); margin: 28px 0; }
   .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
 
-  /* ─── ANIMATIONS ─── */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(28px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-  @keyframes fadeLeft {
-    from { opacity: 0; transform: translateX(40px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  @keyframes floatY {
-    0%,100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-  @keyframes pulse {
-    0%,100% { opacity: 1; transform: scale(1); }
-    50% { opacity: 0.5; transform: scale(0.8); }
-  }
-  @keyframes marquee {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
-  }
-  @keyframes rotate360 {
-    to { transform: rotate(360deg); }
-  }
+  /* ANIMATIONS */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(28px); } to { opacity: 1; transform: translateY(0); } }
+  @keyframes fadeLeft { from { opacity: 0; transform: translateX(40px); } to { opacity: 1; transform: translateX(0); } }
+  @keyframes floatY { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  @keyframes pulse { 0%,100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.8); } }
+  @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
 
-  .reveal {
-    opacity: 0;
-    transform: translateY(36px);
-    transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1);
-  }
+  .reveal { opacity: 0; transform: translateY(36px); transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1); }
   .reveal.visible { opacity: 1; transform: translateY(0); }
   .reveal-delay-1 { transition-delay: 0.1s; }
   .reveal-delay-2 { transition-delay: 0.2s; }
@@ -730,54 +374,14 @@ h1, h2, h3, h4, h5 {
   .reveal-delay-4 { transition-delay: 0.4s; }
   .reveal-delay-5 { transition-delay: 0.5s; }
 
-  /* ─── MOBILE NAV ─── */
   .navbar-toggler { border-color: var(--border); }
-  .navbar-toggler-icon { filter: invert(1); }
-  .navbar-collapse { background: rgba(5,8,16,0.97); padding: 16px 0; border-radius: var(--radius); margin-top: 8px; }
+  .navbar-collapse { background: rgba(245,247,252,0.99); padding: 16px 0; border-radius: var(--radius); margin-top: 8px; }
 
-  /* ─── RESPONSIVE ─── */
-  @media (max-width: 991px) {
-    .trainer-card { flex-direction: column; }
-    .trainer-stats { grid-template-columns: repeat(3,1fr); }
-    .fullstack-section { padding: 40px 30px; }
-    .cta-card { padding: 48px 28px; }
-  }
-  @media (max-width: 576px) {
-    .hero-stats { gap: 20px; }
-    .stat-num { font-size: 1.6rem; }
-    .trainer-stats { grid-template-columns: repeat(3,1fr); gap: 8px; }
-    .t-stat { padding: 10px 6px; }
-    .t-stat-num { font-size: 1.1rem; }
-    .roadmap-phase { padding: 22px 18px; }
-  }
+  @media (max-width: 991px) { .trainer-card { flex-direction: column; } .cta-card { padding: 48px 28px; } }
+  @media (max-width: 576px) { .hero-stats { gap: 20px; } .stat-num { font-size: 1.6rem; } .roadmap-phase { padding: 22px 18px; } }
 
-  /* ─── DIVIDER ORNAMENT ─── */
-  .ornament-divider {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    margin: 10px 0 48px;
-  }
-  .ornament-divider span { height: 1px; flex: 1; background: linear-gradient(to right, transparent, var(--border), transparent); }
-  .ornament-divider i { color: var(--accent-1); font-size: 0.7rem; }
-
-  .nav-dots {
-    position: fixed;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    z-index: 900;
-  }
-  .nav-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: rgba(255,255,255,0.2);
-    cursor: pointer;
-    transition: background 0.3s, transform 0.3s;
-  }
+  .nav-dots { position: fixed; right: 20px; top: 50%; transform: translateY(-50%); display: flex; flex-direction: column; gap: 10px; z-index: 900; }
+  .nav-dot { width: 8px; height: 8px; border-radius: 50%; background: rgba(91,82,232,0.2); cursor: pointer; transition: background 0.3s, transform 0.3s; }
   .nav-dot.active { background: var(--accent-1); transform: scale(1.3); }
   @media (max-width: 768px) { .nav-dots { display: none; } }
 </style>
@@ -790,7 +394,6 @@ h1, h2, h3, h4, h5 {
   <div class="nav-dot" data-target="about" title="About"></div>
   <div class="nav-dot" data-target="trainer" title="Trainer"></div>
   <div class="nav-dot" data-target="roadmap" title="Roadmap"></div>
-  <div class="nav-dot" data-target="fullstack" title="Full Stack"></div>
   <div class="nav-dot" data-target="features" title="Features"></div>
   <div class="nav-dot" data-target="cta" title="Join"></div>
 </div>
@@ -798,7 +401,10 @@ h1, h2, h3, h4, h5 {
 <!-- NAVBAR -->
 <nav class="navbar navbar-expand-lg">
   <div class="container">
-    <a class="navbar-brand" href="#">DevAnalytiq</a>
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="logo.png" alt="DevAnalytiq Logo" style="height:40px; margin-right:10px;">
+      <span>DevAnalytiq</span>
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -827,9 +433,9 @@ h1, h2, h3, h4, h5 {
         </div>
         <h1>
           Transform Your<br>Future with
-          <span class="grad"> Python<br>& Data Skills</span>
+          <span class="grad"> Python<br>&amp; Data Skills</span>
         </h1>
-        <p class="hero-sub">From Zero to Industry-Ready — Build real skills that matter. Land the career you deserve with hands-on experience and mentorship from a practicing Data Engineer.</p>
+        <p class="hero-sub">From Zero to Industry-Ready. Build real skills that matter. Land the career you deserve with hands-on experience and mentorship from a practicing Data Engineer.</p>
         <div class="d-flex flex-wrap gap-3" style="animation: fadeUp 1s 0.25s ease both;">
           <a href="#cta" class="btn-primary-grad">
             Start Learning Now
@@ -857,7 +463,7 @@ h1, h2, h3, h4, h5 {
       </div>
       <div class="col-lg-6">
         <div class="hero-visual">
-          <div class="floating-pill p1" style="color:#a89cff;">
+          <div class="floating-pill p1">
             <span class="pill-dot" style="background: var(--accent-1);"></span>
             ML Model Accuracy: 98.0%
           </div>
@@ -882,118 +488,37 @@ h1, h2, h3, h4, h5 {
               <div>&nbsp;</div>
               <div><span class="code-cm"># Accuracy: 98.0% — Built at DevAnalytiq</span></div>
             </div>
-            <div style="display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);">
-              
           </div>
-        
         </div>
       </div>
     </div>
   </div>
 </section>
 
-
-
-<!-- TRADITIONAL SYSTEM PROBLEM -->
+<!-- REALITY CHECK -->
 <section class="section" id="reality">
   <div class="container">
-    
     <div class="text-center mb-5">
       <div class="section-tag" style="justify-content:center;">Reality Check</div>
-      <h2 class="section-title">
-        The Problem with <span style="color:var(--accent-3);">Traditional Learning</span>
-      </h2>
-      <p class="section-sub mx-auto">
-        Why most students feel confused — even after completing their degree
-      </p>
+      <h2 class="section-title">The Problem with <span style="color:var(--accent-3);">Traditional Learning</span></h2>
+      <p class="section-sub mx-auto">Why most students feel confused even after completing their degree</p>
     </div>
-
     <div class="row g-4">
-
-      <!-- Problem Card 1 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card">
-          <h4>Too Much Theory</h4>
-          <p>
-            Most colleges focus heavily on theory and exams, 
-            but very little on real-world implementation.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problem Card 2 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card">
-          <h4>No Real Projects</h4>
-          <p>
-            Students graduate without building actual projects 
-            that companies expect during interviews.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problem Card 3 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card">
-          <h4>Outdated Curriculum</h4>
-          <p>
-            Technology evolves fast, but college syllabus updates slowly,
-            creating a huge gap.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problem Card 4 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card">
-          <h4>No Industry Exposure</h4>
-          <p>
-            Students are not exposed to real tools, workflows, 
-            or industry-level problem solving.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problem Card 5 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card">
-          <h4>Lack of Direction</h4>
-          <p>
-            Many students don’t know what to learn, 
-            where to start, or how to become job-ready.
-          </p>
-        </div>
-      </div>
-
-      <!-- Problem Card 6 -->
-      <div class="col-md-6 col-lg-4">
-        <div class="feature-card" style="background:linear-gradient(135deg,rgba(255,101,132,0.1),rgba(108,99,255,0.08));border-color:rgba(255,101,132,0.3);">
-          <h4>Result?</h4>
-          <p>
-            Students complete their degree…
-            but still feel unprepared for real jobs.
-          </p>
-        </div>
-      </div>
-
+      <div class="col-md-6 col-lg-4"><div class="feature-card"><h4>Too Much Theory</h4><p>Most colleges focus heavily on theory and exams, but very little on real-world implementation.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="feature-card"><h4>No Real Projects</h4><p>Students graduate without building actual projects that companies expect during interviews.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="feature-card"><h4>Outdated Curriculum</h4><p>Technology evolves fast, but college syllabus updates slowly, creating a huge gap.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="feature-card"><h4>No Industry Exposure</h4><p>Students are not exposed to real tools, workflows, or industry-level problem solving.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="feature-card"><h4>Lack of Direction</h4><p>Many students don't know what to learn, where to start, or how to become job-ready.</p></div></div>
+      <div class="col-md-6 col-lg-4"><div class="feature-card" style="background:linear-gradient(135deg,rgba(232,53,101,0.06),rgba(91,82,232,0.04));border-color:rgba(232,53,101,0.18);"><h4>Result?</h4><p>Students complete their degree… but still feel unprepared for real jobs.</p></div></div>
     </div>
-
-    <!-- Bottom Human Line -->
     <div class="text-center mt-5">
-      <p style="color:#b0b8d1;max-width:650px;margin:auto;font-size:1rem;">
-        This is not your fault.  
-        The system was not designed for today’s industry needs.
-        <br><br>
+      <p style="color:var(--text-muted);max-width:650px;margin:auto;font-size:1rem;">
+        This is not your fault. The system was not designed for today's industry needs.<br><br>
         But the good news is — you can fix it.
       </p>
     </div>
-
   </div>
 </section>
-
-
-
-
 
 <!-- ABOUT -->
 <section class="section section-alt" id="about">
@@ -1002,23 +527,17 @@ h1, h2, h3, h4, h5 {
       <div class="col-lg-5 reveal">
         <div class="section-tag">About Us</div>
         <h2 class="section-title">Where Skills Meet<br><span style="color:var(--accent-2);">Industry Reality</span></h2>
-        <p class="section-sub">We don't just teach Python. We help you understand what actually matters in the industry
-through real projects, not just theory.</p>
+        <p class="section-sub">We don't just teach Python. We help you understand what actually matters in the industry through real projects, not just theory.</p>
       </div>
       <div class="col-lg-7 reveal reveal-delay-2">
         <div class="about-card">
           <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.85;">
-  Most students follow the college syllabus without knowing what actually matters in the industry.
-
-  The problem is it’s often outdated and doesn’t prepare you for real-world roles.
-
-  At DevAnalytiq, we focus on building practical skills through real-time projects,
-  so you can understand how things actually work in the industry.
-</p>
-
-<div class="about-highlight">
-  "Companies don’t hire based on syllabus they hire based on skills."
-</div>
+            Most students follow the college syllabus without knowing what actually matters in the industry.
+            The problem is it's often outdated and doesn't prepare you for real-world roles.
+            At DevAnalytiq, we focus on building practical skills through real-time projects,
+            so you can understand how things actually work in the industry.
+          </p>
+          <div class="about-highlight">"Companies don't hire based on syllabus — they hire based on skills."</div>
           <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:20px;">Our curriculum is shaped by real industry work not textbooks. Every module, every project, every concept comes directly from what's being used in production environments today.</p>
           <div>
             <span class="skill-tag"><i class="fas fa-brain me-1"></i> Machine Learning</span>
@@ -1035,88 +554,46 @@ through real projects, not just theory.</p>
 </section>
 
 <!-- TRAINER -->
-<!-- TRAINER -->
 <section class="section" id="trainer">
   <div class="container">
-    
     <div class="text-center mb-5 reveal">
       <div class="section-tag" style="justify-content:center;">Meet Your Trainers</div>
-      <h2 class="section-title">
-        Learn From <br>
-        <span style="color:var(--accent-1);">Industry Professionals</span>
-      </h2>
+      <h2 class="section-title">Learn From <br><span style="color:var(--accent-1);">Industry Professionals</span></h2>
     </div>
-
     <div class="row g-4 justify-content-center">
-            <!-- TRAINER 2 -->
       <div class="col-lg-6 reveal reveal-delay-2">
         <div class="trainer-card h-100">
-
-          <div>
-            <div class="trainer-avatar">
-              <img src="aravind.jpg" alt="Aravind Reddy" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
-            </div>
-          </div>
-
+          <div><div class="trainer-avatar"><img src="aravind.jpg" alt="Aravind Reddy"></div></div>
           <div class="flex-grow-1">
             <div class="trainer-name">Aravind Reddy</div>
-            <div class="trainer-role">
-              <i class="fas fa-building me-1"></i> Senior Trainer @ DRFGrowTech
-            </div>
-
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">
-              Aravind Reddy is a Senior Trainer with 10+ years of experience, 
-              known for delivering structured, practical training aligned with industry requirements.
-            </p>
-
+            <div class="trainer-role"><i class="fas fa-building me-1"></i> Senior Trainer @ DRFGrowTech</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">Aravind Reddy is a Senior Trainer with 10+ years of experience, known for delivering structured, practical training aligned with industry requirements.</p>
             <ul style="color:var(--text-muted);font-size:0.88rem;padding-left:18px;">
               <li>10+ years of training experience</li>
               <li>Currently working at DRFGrowTech</li>
               <li>Specializes in practical and concept-driven teaching</li>
             </ul>
-
           </div>
         </div>
       </div>
-
-      <!-- TRAINER 1 -->
       <div class="col-lg-6 reveal">
         <div class="trainer-card h-100">
-          
-          <div>
-            <div class="trainer-avatar">
-              <img src="sai.jpg" alt="Lakshmana Sai" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
-            </div>
-          </div>
-
+          <div><div class="trainer-avatar"><img src="sai.jpg" alt="Lakshmana Sai"></div></div>
           <div class="flex-grow-1">
             <div class="trainer-name">Lakshmana Sai Karumuri</div>
-            <div class="trainer-role">
-              <i class="fas fa-building me-1"></i> Data Engineer @ Cynosure Software Solution
-            </div>
-
-            <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">
-              Lakshmana Sai Karumuri is a Data Engineer with 1.5+ years of hands-on industry experience, 
-              focused on building real-world solutions and practical learning approaches.
-            </p>
-
+            <div class="trainer-role"><i class="fas fa-building me-1"></i> Data Engineer @ Cynosure Software Solution</div>
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">Lakshmana Sai Karumuri is a Data Engineer with 1.5+ years of hands-on industry experience, focused on building real-world solutions and practical learning approaches.</p>
             <ul style="color:var(--text-muted);font-size:0.88rem;padding-left:18px;">
               <li>1.5+ years industry experience</li>
-              <li>40+ real-world projects across ML, NLP & Data Engineering</li>
+              <li>40+ real-world projects across ML, NLP &amp; Data Engineering</li>
               <li>Focus on practical, industry-oriented learning</li>
             </ul>
-
           </div>
         </div>
       </div>
-
-
-
     </div>
-
   </div>
 </section>
-
 
 <!-- ROADMAP -->
 <section class="section section-alt roadmap-section" id="roadmap">
@@ -1124,17 +601,14 @@ through real projects, not just theory.</p>
     <div class="text-center mb-5 reveal">
       <div class="section-tag" style="justify-content:center;">Curriculum</div>
       <h2 class="section-title">Complete Learning<br><span style="color:var(--accent-2);">Roadmap</span></h2>
-      <p class="section-sub mx-auto">DevAnalytiq presents — Program for NextGen Graduates</p>
+      <p class="section-sub mx-auto">DevAnalytiq presents Program for NextGen Graduates</p>
     </div>
 
     <!-- Phase 1 -->
     <div class="roadmap-phase reveal reveal-delay-1">
       <div class="phase-header">
         <div class="phase-num">01</div>
-        <div>
-          <div class="phase-title-text">Python Basic Concepts</div>
-          <div class="phase-subtitle">Foundation for every data journey</div>
-        </div>
+        <div><div class="phase-title-text">Python Basic Concepts</div><div class="phase-subtitle">Foundation for every data journey</div></div>
       </div>
       <div class="row g-2">
         <div class="col-md-6">
@@ -1156,121 +630,93 @@ through real projects, not just theory.</p>
       </div>
     </div>
 
-    <div class="roadmap-connector mx-auto reveal">
-      <div class="connector-line"></div>
-    </div>
+    <div class="roadmap-connector mx-auto reveal"><div class="connector-line"></div></div>
 
     <!-- Phase 2 -->
-    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(0,212,255,0.2);">
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(0,153,204,0.2);">
       <div class="phase-header">
-        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-2),#0099cc);">02</div>
-        <div>
-          <div class="phase-title-text">Advanced Topics</div>
-          <div class="phase-subtitle">Power tools for data professionals</div>
-        </div>
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-2),#006e99);">02</div>
+        <div><div class="phase-title-text">Advanced Topics</div><div class="phase-subtitle">Power tools for data professionals</div></div>
       </div>
       <div class="row g-2">
         <div class="col-md-6">
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">13</div>Object Oriented Programming</div>
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">14</div>NumPy</div>
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">15</div>Pandas</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,153,204,0.22);background:rgba(0,153,204,0.07);">13</div>Object Oriented Programming</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,153,204,0.22);background:rgba(0,153,204,0.07);">14</div>NumPy</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,153,204,0.22);background:rgba(0,153,204,0.07);">15</div>Pandas</div>
         </div>
         <div class="col-md-6">
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">16</div>Matplotlib</div>
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">17</div>Seaborn</div>
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">18</div>Scikit-learn</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,153,204,0.22);background:rgba(0,153,204,0.07);">16</div>Matplotlib</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,153,204,0.22);background:rgba(0,153,204,0.07);">17</div>Seaborn</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,153,204,0.22);background:rgba(0,153,204,0.07);">18</div>Scikit-learn</div>
         </div>
       </div>
     </div>
 
-    <div class="roadmap-connector mx-auto reveal">
-      <div class="connector-line" style="background:linear-gradient(to bottom,var(--accent-gold),rgba(244,185,66,0));"></div>
-    </div>
+    <div class="roadmap-connector mx-auto reveal"><div class="connector-line" style="background:linear-gradient(to bottom,var(--accent-gold),rgba(200,134,10,0));"></div></div>
 
     <!-- Phase 3 -->
-    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(244,185,66,0.2);">
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(200,134,10,0.2);">
       <div class="phase-header">
-        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-gold),#e07b00);">03</div>
-        <div>
-          <div class="phase-title-text">Statistics for Machine Learning</div>
-          <div class="phase-subtitle">If you're enthusiastic about machine learning, you need to learn statistics.</div>
-        </div>
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-gold),#8a5a00);">03</div>
+        <div><div class="phase-title-text">Statistics for Machine Learning</div><div class="phase-subtitle">If you're enthusiastic about machine learning, you need to learn statistics.</div></div>
       </div>
       <div class="row g-2">
-        <div class="col-md-6">
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-gold);border-color:rgba(244,185,66,0.3);background:rgba(244,185,66,0.08);">1</div>Descriptive statistics</div>
-        </div>
-        <div class="col-md-6">
-          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-gold);border-color:rgba(244,185,66,0.3);background:rgba(244,185,66,0.08);">2</div>Ineffectual statistics</div>
-        </div>
+        <div class="col-md-6"><div class="roadmap-item"><div class="num-badge" style="color:var(--accent-gold);border-color:rgba(200,134,10,0.22);background:rgba(200,134,10,0.07);">1</div>Descriptive statistics</div></div>
+        <div class="col-md-6"><div class="roadmap-item"><div class="num-badge" style="color:var(--accent-gold);border-color:rgba(200,134,10,0.22);background:rgba(200,134,10,0.07);">2</div>Ineffectual statistics</div></div>
       </div>
     </div>
 
-    <div class="roadmap-connector mx-auto reveal">
-      <div class="connector-line" style="background:linear-gradient(to bottom,#ff6584,rgba(255,101,132,0));"></div>
-    </div>
+    <div class="roadmap-connector mx-auto reveal"><div class="connector-line" style="background:linear-gradient(to bottom,#e83565,rgba(232,53,101,0));"></div></div>
 
     <!-- Phase 4 -->
-    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(255,101,132,0.2);">
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(232,53,101,0.2);">
       <div class="phase-header">
-        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-3),#cc0055);">04</div>
-        <div>
-          <div class="phase-title-text">Data Visualization</div>
-          <div class="phase-subtitle">Using Matplotlib and Seaborn</div>
-        </div>
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-3),#9a0030);">04</div>
+        <div><div class="phase-title-text">Data Visualization</div><div class="phase-subtitle">Using Matplotlib and Seaborn</div></div>
       </div>
       <div class="roadmap-item" style="border:none;">
-        <div class="num-badge" style="color:var(--accent-3);border-color:rgba(255,101,132,0.3);background:rgba(255,101,132,0.08);">★</div>
+        <div class="num-badge" style="color:var(--accent-3);border-color:rgba(232,53,101,0.22);background:rgba(232,53,101,0.07);">★</div>
         Comprehensive data visualization using Matplotlib and Seaborn with real datasets
       </div>
     </div>
 
-    <div class="roadmap-connector mx-auto reveal">
-      <div class="connector-line" style="background:linear-gradient(to bottom,#00ff88,rgba(0,255,136,0));"></div>
-    </div>
+    <div class="roadmap-connector mx-auto reveal"><div class="connector-line" style="background:linear-gradient(to bottom,#009944,rgba(0,153,68,0));"></div></div>
 
     <!-- Phase 5 -->
-    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(0,255,136,0.2);">
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(0,153,68,0.2);">
       <div class="phase-header">
-        <div class="phase-num" style="background:linear-gradient(135deg,#00cc6a,#007a3d);">05</div>
-        <div>
-          <div class="phase-title-text">Machine Learning with Scikit-learn</div>
-          <div class="phase-subtitle">Live coding, execution, and model evaluation</div>
-        </div>
+        <div class="phase-num" style="background:linear-gradient(135deg,#009944,#006630);">05</div>
+        <div><div class="phase-title-text">Machine Learning with Scikit-learn</div><div class="phase-subtitle">Live coding, execution, and model evaluation</div></div>
       </div>
       <div class="row g-2">
         <div class="col-md-6">
-          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">1</div>Intro to Machine Learning</div>
-          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">2</div>Machine Learning types</div>
-                              <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">3</div>Machine learning model development workflow </div>
-
+          <div class="roadmap-item"><div class="num-badge" style="color:#009944;border-color:rgba(0,153,68,0.22);background:rgba(0,153,68,0.07);">1</div>Intro to Machine Learning</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:#009944;border-color:rgba(0,153,68,0.22);background:rgba(0,153,68,0.07);">2</div>Machine Learning types</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:#009944;border-color:rgba(0,153,68,0.22);background:rgba(0,153,68,0.07);">3</div>Machine learning model development workflow</div>
         </div>
         <div class="col-md-6">
-
-          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">4</div>Brief explanation on machine learning algorithms with live coding and execution</div>
-          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">5</div>Performance Evaluation Matrix for model</div>
-                            <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">6</div>Predictions generated by the model </div>
-
+          <div class="roadmap-item"><div class="num-badge" style="color:#009944;border-color:rgba(0,153,68,0.22);background:rgba(0,153,68,0.07);">4</div>Brief explanation on machine learning algorithms with live coding and execution</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:#009944;border-color:rgba(0,153,68,0.22);background:rgba(0,153,68,0.07);">5</div>Performance Evaluation Matrix for model</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:#009944;border-color:rgba(0,153,68,0.22);background:rgba(0,153,68,0.07);">6</div>Predictions generated by the model</div>
         </div>
       </div>
     </div>
 
-    <!-- Azure Special Card -->
+    <!-- Azure Card -->
     <div class="azure-card reveal mt-4">
       <div class="d-flex align-items-start gap-3">
-        <div style="background:rgba(0,120,212,0.2);border:1px solid rgba(0,120,212,0.4);border-radius:12px;padding:10px 14px;font-size:1.4rem;flex-shrink:0;">☁</div>
+        <div style="background:rgba(0,120,212,0.09);border:1px solid rgba(0,120,212,0.20);border-radius:12px;padding:10px 14px;font-size:1.4rem;flex-shrink:0;">☁</div>
         <div>
-          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:6px;color:var(--accent-2);">Bonus: Azure AZ-104 Certification Concepts</div>
-          <p style="color:var(--text-muted);font-size:0.9rem;margin:0;">Additional Azure AZ-104 certification concepts explained in detail — giving you a competitive edge in cloud-ready job roles.</p>
+          <div style="font-weight:700;font-size:1.05rem;margin-bottom:6px;color:var(--accent-2);">Bonus: Azure AZ-104 Certification Concepts</div>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin:0;">Additional Azure AZ-104 certification concepts explained in detail giving you a competitive edge in cloud-ready job roles.</p>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- FEATURES -->
-<section class="section section-alt" id="features">
+<section class="section" id="features">
   <div class="container">
     <div class="text-center mb-5 reveal">
       <div class="section-tag" style="justify-content:center;">Why DevAnalytiq</div>
@@ -1279,54 +725,42 @@ through real projects, not just theory.</p>
     <div class="row g-4">
       <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
         <div class="feature-card f1">
-          <div class="feature-icon" style="background:rgba(108,99,255,0.15);">
-            <i class="fas fa-seedling" style="color:var(--accent-1);"></i>
-          </div>
+          <div class="feature-icon" style="background:rgba(91,82,232,0.09);"><i class="fas fa-seedling" style="color:var(--accent-1);"></i></div>
           <h4>Beginner Friendly</h4>
           <p>No prior coding experience needed. We start from absolute zero with crystal-clear explanations and a supportive learning environment.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
         <div class="feature-card f2">
-          <div class="feature-icon" style="background:rgba(0,212,255,0.12);">
-            <i class="fas fa-industry" style="color:var(--accent-2);"></i>
-          </div>
+          <div class="feature-icon" style="background:rgba(0,153,204,0.08);"><i class="fas fa-industry" style="color:var(--accent-2);"></i></div>
           <h4>Industry-Level Projects</h4>
           <p>Build 40+ projects that mirror real production systems. Your portfolio will speak louder than any certificate.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
         <div class="feature-card f3">
-          <div class="feature-icon" style="background:rgba(244,185,66,0.12);">
-            <i class="fas fa-hands-helping" style="color:var(--accent-gold);"></i>
-          </div>
+          <div class="feature-icon" style="background:rgba(200,134,10,0.08);"><i class="fas fa-hands-helping" style="color:var(--accent-gold);"></i></div>
           <h4>Hands-on Learning</h4>
           <p>Every concept is immediately applied through live coding sessions and guided project work — no passive lectures.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 reveal reveal-delay-4">
         <div class="feature-card f4">
-          <div class="feature-icon" style="background:rgba(255,101,132,0.12);">
-            <i class="fas fa-bullseye" style="color:var(--accent-3);"></i>
-          </div>
+          <div class="feature-icon" style="background:rgba(232,53,101,0.08);"><i class="fas fa-bullseye" style="color:var(--accent-3);"></i></div>
           <h4>Career Focused</h4>
           <p>Our curriculum is designed around what employers actually hire for. From day one, we're training you for the job market.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 reveal reveal-delay-5">
         <div class="feature-card f5">
-          <div class="feature-icon" style="background:rgba(0,255,136,0.1);">
-            <i class="fas fa-lightbulb" style="color:#00cc6a;"></i>
-          </div>
+          <div class="feature-icon" style="background:rgba(0,153,68,0.07);"><i class="fas fa-lightbulb" style="color:#009944;"></i></div>
           <h4>Real-time Examples</h4>
           <p>Learn with examples drawn straight from production systems at real companies — not contrived textbook problems.</p>
         </div>
       </div>
       <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
-        <div class="feature-card" style="background:linear-gradient(135deg,rgba(108,99,255,0.12),rgba(0,212,255,0.07));border-color:rgba(108,99,255,0.3);">
-          <div class="feature-icon" style="background:rgba(108,99,255,0.2);">
-            <i class="fas fa-star" style="color:var(--accent-gold);"></i>
-          </div>
+        <div class="feature-card" style="background:linear-gradient(135deg,rgba(91,82,232,0.06),rgba(0,153,204,0.04));border-color:rgba(91,82,232,0.18);">
+          <div class="feature-icon" style="background:rgba(91,82,232,0.09);"><i class="fas fa-star" style="color:var(--accent-gold);"></i></div>
           <h4>Azure Cloud Bonus</h4>
           <p>Get a head start with AZ-104 certification concepts included in the curriculum — no extra cost, massive extra value.</p>
         </div>
@@ -1344,70 +778,20 @@ through real projects, not just theory.</p>
     </div>
   </div>
   <div class="inspire-marquee">
-    <div class="marquee-track" id="marqueeTrack">
-      <div class="inspire-quote-card">
-        <span class="q-icon">✦</span>
-        <span class="q-text q-accent">Start where you are.</span>
-        <span class="q-text" style="color:var(--text-muted);">Build what matters.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">⚡</span>
-        <span class="q-text" style="color:var(--accent-2);">Consistency</span>
-        <span class="q-text" style="color:var(--text-muted);">beats talent.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">🔮</span>
-        <span class="q-text" style="color:var(--accent-gold);">Your future</span>
-        <span class="q-text" style="color:var(--text-muted);">is coded today.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">🚀</span>
-        <span class="q-text q-accent">Learn.</span>
-        <span class="q-text" style="color:var(--accent-2);">Build.</span>
-        <span class="q-text" style="color:var(--accent-gold);">Transform.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">💡</span>
-        <span class="q-text" style="color:var(--accent-3);">Skills</span>
-        <span class="q-text" style="color:var(--text-muted);">outlast degrees.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">🔥</span>
-        <span class="q-text" style="color:#00cc6a);">Code</span>
-        <span class="q-text" style="color:var(--text-muted);">your own destiny.</span>
-      </div>
+    <div class="marquee-track">
+      <div class="inspire-quote-card"><span class="q-icon">✦</span><span class="q-text q-accent">Start where you are.</span><span class="q-text" style="color:var(--text-muted);">Build what matters.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">⚡</span><span class="q-text" style="color:var(--accent-2);">Consistency</span><span class="q-text" style="color:var(--text-muted);">beats talent.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">🔮</span><span class="q-text" style="color:var(--accent-gold);">Your future</span><span class="q-text" style="color:var(--text-muted);">is coded today.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">🚀</span><span class="q-text q-accent">Learn.</span><span class="q-text" style="color:var(--accent-2);">Build.</span><span class="q-text" style="color:var(--accent-gold);">Transform.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">💡</span><span class="q-text" style="color:var(--accent-3);">Skills</span><span class="q-text" style="color:var(--text-muted);">outlast degrees.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">🔥</span><span class="q-text" style="color:#009944;">Code</span><span class="q-text" style="color:var(--text-muted);">your own destiny.</span></div>
       <!-- Duplicate for seamless loop -->
-      <div class="inspire-quote-card">
-        <span class="q-icon">✦</span>
-        <span class="q-text q-accent">Start where you are.</span>
-        <span class="q-text" style="color:var(--text-muted);">Build what matters.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">⚡</span>
-        <span class="q-text" style="color:var(--accent-2);">Consistency</span>
-        <span class="q-text" style="color:var(--text-muted);">beats talent.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">🔮</span>
-        <span class="q-text" style="color:var(--accent-gold);">Your future</span>
-        <span class="q-text" style="color:var(--text-muted);">is coded today.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">🚀</span>
-        <span class="q-text q-accent">Learn.</span>
-        <span class="q-text" style="color:var(--accent-2);">Build.</span>
-        <span class="q-text" style="color:var(--accent-gold);">Transform.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">💡</span>
-        <span class="q-text" style="color:var(--accent-3);">Skills</span>
-        <span class="q-text" style="color:var(--text-muted);">outlast degrees.</span>
-      </div>
-      <div class="inspire-quote-card">
-        <span class="q-icon">🔥</span>
-        <span class="q-text" style="color:#00cc6a;">Code</span>
-        <span class="q-text" style="color:var(--text-muted);">your own destiny.</span>
-      </div>
+      <div class="inspire-quote-card"><span class="q-icon">✦</span><span class="q-text q-accent">Start where you are.</span><span class="q-text" style="color:var(--text-muted);">Build what matters.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">⚡</span><span class="q-text" style="color:var(--accent-2);">Consistency</span><span class="q-text" style="color:var(--text-muted);">beats talent.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">🔮</span><span class="q-text" style="color:var(--accent-gold);">Your future</span><span class="q-text" style="color:var(--text-muted);">is coded today.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">🚀</span><span class="q-text q-accent">Learn.</span><span class="q-text" style="color:var(--accent-2);">Build.</span><span class="q-text" style="color:var(--accent-gold);">Transform.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">💡</span><span class="q-text" style="color:var(--accent-3);">Skills</span><span class="q-text" style="color:var(--text-muted);">outlast degrees.</span></div>
+      <div class="inspire-quote-card"><span class="q-icon">🔥</span><span class="q-text" style="color:#009944;">Code</span><span class="q-text" style="color:var(--text-muted);">your own destiny.</span></div>
     </div>
   </div>
 </section>
@@ -1421,29 +805,15 @@ through real projects, not just theory.</p>
       <h2>Ready to Become a<br><span style="color:var(--accent-1);">Data Professional?</span></h2>
       <p>Join DevAnalytiq and start building the skills, portfolio, and confidence to land your dream role in tech.</p>
       <div class="d-flex justify-content-center flex-wrap gap-3">
-        <a href="https://forms.zohopublic.in/lakshmanasaikarumuri2k22gm1/form/PartnershipInquiryForm/formperma/HFTc6rYM7jwkAInFM1e4mPbnS8TiKUqAibnuYRTtFc4" 
-   target="_blank"
-   class="btn-primary-grad" 
-   style="font-size:1.05rem;padding:16px 44px;">
-  Join DevAnalytiq Now
-</a>
+        <a href="https://forms.zohopublic.in/lakshmanasaikarumuri2k22gm1/form/PartnershipInquiryForm/formperma/HFTc6rYM7jwkAInFM1e4mPbnS8TiKUqAibnuYRTtFc4" target="_blank" class="btn-primary-grad" style="font-size:1.05rem;padding:16px 44px;">
           Join DevAnalytiq Now
           <i class="fas fa-rocket" style="font-size:0.9rem;"></i>
         </a>
       </div>
       <div style="margin-top:36px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
-        <div style="text-align:center;">
-          <div style="font-size:1.6rem;font-weight:800;font-family:'Syne',sans-serif;color:var(--accent-2);">40+</div>
-          <div style="font-size:0.8rem;color:var(--text-muted);">Real Projects</div>
-        </div>
-        <div style="text-align:center;border-left:1px solid var(--border);padding-left:40px;">
-          <div style="font-size:1.6rem;font-weight:800;font-family:'Syne',sans-serif;color:var(--accent-1);">5+</div>
-          <div style="font-size:0.8rem;color:var(--text-muted);">Tech Domains</div>
-        </div>
-        <div style="text-align:center;border-left:1px solid var(--border);padding-left:40px;">
-          <div style="font-size:1.6rem;font-weight:800;font-family:'Syne',sans-serif;color:var(--accent-gold);">∞</div>
-          <div style="font-size:0.8rem;color:var(--text-muted);">Career Potential</div>
-        </div>
+        <div style="text-align:center;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-2);">40+</div><div style="font-size:0.8rem;color:var(--text-muted);">Real Projects</div></div>
+        <div style="text-align:center;border-left:1px solid var(--border);padding-left:40px;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-1);">5+</div><div style="font-size:0.8rem;color:var(--text-muted);">Tech Domains</div></div>
+        <div style="text-align:center;border-left:1px solid var(--border);padding-left:40px;"><div style="font-size:1.6rem;font-weight:800;color:var(--accent-gold);">∞</div><div style="font-size:0.8rem;color:var(--text-muted);">Career Potential</div></div>
       </div>
     </div>
   </div>
@@ -1459,30 +829,16 @@ through real projects, not just theory.</p>
       </div>
       <div class="col-md-4 text-md-center mb-4 mb-md-0">
         <div style="font-size:0.8rem;color:var(--text-muted);">
-          <a href="#about" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">About</a>
-          <a href="#trainer" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Trainer</a>
-          <a href="#roadmap" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Roadmap</a>
-          <a href="#cta" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Enroll</a>
+          <a href="#about" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">About</a>
+          <a href="#trainer" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">Trainer</a>
+          <a href="#roadmap" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">Roadmap</a>
+          <a href="#cta" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='var(--text-primary)'" onmouseout="this.style.color='var(--text-muted)'">Enroll</a>
         </div>
       </div>
-     
     </div>
     <hr class="footer-divider">
     <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
-      <div class="footer-copy",id="year">  © <span id="year"></span> All rights reserved to DevAnalytiq </div>
-
-
-
-
-
-<script>
-  document.getElementById("year").textContent = new Date().getFullYear();
-</script>
-
-
-
-
-
+      <div class="footer-copy">© <span id="yearSpan"></span> All rights reserved to DevAnalytiq</div>
       <div class="footer-copy">Empowering NextGen Graduates 🚀</div>
     </div>
   </div>
@@ -1490,75 +846,40 @@ through real projects, not just theory.</p>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
 <script>
-  // Intersection Observer for scroll reveal
+  document.getElementById("yearSpan").textContent = new Date().getFullYear();
+
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
-    entries.forEach(e => {
-      if (e.isIntersecting) { e.target.classList.add('visible'); }
-    });
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
   }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
   revealEls.forEach(el => observer.observe(el));
 
-  // Nav dot tracking
-  const sections = ['hero','about','trainer','roadmap','fullstack','features','cta'];
+  const sections = ['hero','about','trainer','roadmap','features','cta'];
   const dots = document.querySelectorAll('.nav-dot');
   const sectionEls = sections.map(id => document.getElementById(id));
-
   dots.forEach((dot, i) => {
-    dot.addEventListener('click', () => {
-      sectionEls[i].scrollIntoView({ behavior: 'smooth' });
-    });
+    dot.addEventListener('click', () => { if (sectionEls[i]) sectionEls[i].scrollIntoView({ behavior: 'smooth' }); });
   });
-
   const dotObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
         const idx = sections.indexOf(e.target.id);
-        if (idx !== -1) {
-          dots.forEach(d => d.classList.remove('active'));
-          dots[idx].classList.add('active');
-        }
+        if (idx !== -1) { dots.forEach(d => d.classList.remove('active')); dots[idx].classList.add('active'); }
       }
     });
   }, { threshold: 0.4 });
   sectionEls.forEach(el => { if(el) dotObserver.observe(el); });
 
-  // Counter animation
-  function animateCounter(el, target, suffix='') {
-    let start = 0;
-    const duration = 1600;
-    const step = 16;
-    const increment = target / (duration / step);
-    const timer = setInterval(() => {
-      start += increment;
-      if (start >= target) {
-        el.textContent = target + suffix;
-        clearInterval(timer);
-      } else {
-        el.textContent = Math.floor(start) + suffix;
-      }
-    }, step);
-  }
-
-  // Navbar scroll effect
   window.addEventListener('scroll', () => {
     const nav = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-      nav.style.background = 'rgba(5,8,16,0.97)';
-    } else {
-      nav.style.background = 'rgba(5,8,16,0.8)';
-    }
+    nav.style.background = window.scrollY > 50 ? 'rgba(245,247,252,0.99)' : 'rgba(245,247,252,0.92)';
   });
 
-  // Cursor glow (desktop only)
   if (window.innerWidth > 768) {
     const glow = document.createElement('div');
-    glow.style.cssText = 'position:fixed;pointer-events:none;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,0.06),transparent 70%);transform:translate(-50%,-50%);transition:left 0.4s ease,top 0.4s ease;z-index:0;';
+    glow.style.cssText = 'position:fixed;pointer-events:none;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(91,82,232,0.04),transparent 70%);transform:translate(-50%,-50%);transition:left 0.4s ease,top 0.4s ease;z-index:0;';
     document.body.appendChild(glow);
-    document.addEventListener('mousemove', e => {
-      glow.style.left = e.clientX + 'px';
-      glow.style.top = e.clientY + 'px';
-    });
+    document.addEventListener('mousemove', e => { glow.style.left = e.clientX+'px'; glow.style.top = e.clientY+'px'; });
   }
 </script>
 </body>
