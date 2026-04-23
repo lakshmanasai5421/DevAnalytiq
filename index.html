@@ -1,529 +1,1566 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="5RxtbTGyHjvjLT3qd3vtNg8iycr90_-YXRZF1s1CNMI" />
-    <meta name="robots" content="index, follow">
-    <meta name="keywords" content="Python Developer, Data Analyst, Freelance Python Developer, DevAnalytiq, GitHub Portfolio">
-      
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevAnalytiq – Transform Your Future with Python & Data Skills</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+<style>
 
-    <title>DevAnalytiq - Analyzing Problems. Developing Solutions.</title>
-    <meta name="description" content="Lakshmana Sai Karumuri - Python Developer specializing in Machine Learning, Data Science, and Python Development">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
 
+
+  
+  :root {
+    --bg-deep: #050810;
+    --bg-card: #0c1022;
+    --bg-card2: #111828;
+    --accent-1: #6c63ff;
+    --accent-2: #00d4ff;
+    --accent-3: #ff6584;
+    --accent-gold: #f4b942;
+    --text-primary: #eef2ff;
+    --text-muted: #8892b0;
+    --border: rgba(108, 99, 255, 0.18);
+    --glow: 0 0 40px rgba(108,99,255,0.25);
+    --radius: 16px;
+    --radius-lg: 24px;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  .trainer-avatar {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid rgba(255,255,255,0.1);
+}
+
+.trainer-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+body {
+  background: var(--bg-deep);
+   font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
+  font-weight: 400;
+  overflow-x: hidden;
+  line-height: 1.7;
+}
+
+h1, h2, h3, h4, h5 {
+   font-family: 'Outfit', sans-serif;
+}
+
+  /* ─── SCROLLBAR ─── */
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: var(--bg-deep); }
+  ::-webkit-scrollbar-thumb { background: var(--accent-1); border-radius: 99px; }
+
+  /* ─── NAV ─── */
+  .navbar {
+    background: rgba(5,8,16,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+    transition: background 0.3s;
+  }
+  .navbar-brand {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+  }
+  .nav-link {
+    color: var(--text-muted) !important;
+    font-weight: 500;
+    font-size: 0.9rem;
+    letter-spacing: 0.3px;
+    transition: color 0.2s;
+    padding: 6px 14px !important;
+  }
+  .nav-link:hover { color: var(--text-primary) !important; }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--accent-1), #8a63ff);
+    color: #fff !important;
+    border-radius: 30px;
+    padding: 7px 22px !important;
+    font-weight: 600;
+    transition: transform 0.2s, box-shadow 0.2s !important;
+  }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 24px rgba(108,99,255,0.4) !important; }
+
+  /* ─── HERO ─── */
+  .hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 0 80px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 80% at 20% 50%, rgba(108,99,255,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 60% at 80% 20%, rgba(0,212,255,0.12) 0%, transparent 55%),
+                radial-gradient(ellipse 50% 50% at 60% 80%, rgba(255,101,132,0.08) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(108,99,255,0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(108,99,255,0.06) 1px, transparent 1px);
+    background-size: 60px 60px;
+    mask-image: radial-gradient(ellipse at center, black 30%, transparent 80%);
+  }
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(108,99,255,0.12);
+    border: 1px solid rgba(108,99,255,0.3);
+    border-radius: 30px;
+    padding: 6px 16px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: #a89cff;
+    letter-spacing: 0.5px;
+    margin-bottom: 28px;
+    animation: fadeUp 0.8s ease both;
+  }
+  .hero-badge span { width: 7px; height: 7px; background: var(--accent-1); border-radius: 50%; display: inline-block; animation: pulse 2s infinite; }
+  .hero h1 {
+    font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+    font-weight: 800;
+    line-height: 1.13;
+    letter-spacing: -1.5px;
+    margin-bottom: 20px;
+    animation: fadeUp 0.9s 0.1s ease both;
+  }
+  .hero h1 .grad {
+    background: linear-gradient(135deg, var(--accent-1) 0%, var(--accent-2) 60%, #a0f0ff 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--text-muted);
+    max-width: 540px;
+    margin-bottom: 38px;
+    animation: fadeUp 1s 0.2s ease both;
+    font-weight: 400;
+  }
+  .btn-primary-grad {
+    background: linear-gradient(135deg, var(--accent-1), #8a63ff);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    padding: 14px 36px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: transform 0.25s, box-shadow 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .btn-primary-grad:hover { transform: translateY(-3px); box-shadow: 0 16px 40px rgba(108,99,255,0.45); color: #fff; }
+  .btn-outline-grad {
+    background: transparent;
+    color: var(--text-primary);
+    border: 1.5px solid rgba(108,99,255,0.45);
+    border-radius: 50px;
+    padding: 13px 32px;
+    font-family: 'Syne', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+  }
+  .btn-outline-grad:hover { border-color: var(--accent-1); background: rgba(108,99,255,0.1); transform: translateY(-2px); color: #fff; }
+
+  .hero-stats {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    margin-top: 52px;
+    animation: fadeUp 1.1s 0.35s ease both;
+  }
+  .stat-item { text-align: left; }
+  .stat-num {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, var(--accent-2), var(--accent-1));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  .stat-label { font-size: 0.8rem; color: var(--text-muted); letter-spacing: 0.5px; }
+
+  .hero-visual {
+    position: relative;
+    animation: fadeLeft 1s 0.3s ease both;
+  }
+  .hero-card-main {
+    background: linear-gradient(135deg, var(--bg-card) 0%, #12182e 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 32px;
+    box-shadow: var(--glow);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero-card-main::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2));
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  }
+  .code-block {
+    background: #080d1a;
+    border-radius: 10px;
+    padding: 20px 22px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.82rem;
+    line-height: 1.9;
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .code-kw { color: #c792ea; }
+  .code-fn { color: #82aaff; }
+  .code-str { color: #c3e88d; }
+  .code-cm { color: #546e7a; }
+  .code-num { color: var(--accent-gold); }
+
+  .floating-pill {
+    position: absolute;
+    background: rgba(12,16,34,0.9);
+    border: 1px solid var(--border);
+    backdrop-filter: blur(12px);
+    border-radius: 40px;
+    padding: 8px 16px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    animation: floatY 3s ease-in-out infinite;
+  }
+  .floating-pill.p1 { top: -18px; right: 30px; animation-delay: 0s; }
+  .floating-pill.p2 { bottom: 20px; left: -20px; animation-delay: 1s; }
+  .pill-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+  /* ─── SECTION COMMON ─── */
+  .section { padding: 100px 0; }
+  .section-alt { background: rgba(12,16,34,0.5); }
+
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-1);
+    margin-bottom: 14px;
+  }
+  .section-tag::before {
+    content: '';
+    width: 20px; height: 2px;
+    background: var(--accent-1);
+    border-radius: 2px;
+  }
+  .section-title {
+    font-size: clamp(1.9rem, 3.5vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+  }
+  .section-sub {
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    max-width: 560px;
+  }
+
+  /* ─── ABOUT ─── */
+  .about-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 48px 44px;
+    position: relative;
+    overflow: hidden;
+  }
+  .about-card::after {
+    content: '';
+    position: absolute;
+    bottom: -60px; right: -60px;
+    width: 220px; height: 220px;
+    background: radial-gradient(circle, rgba(108,99,255,0.15), transparent 70%);
+    border-radius: 50%;
+  }
+  .about-highlight {
+    border-left: 3px solid var(--accent-1);
+    padding-left: 20px;
+    margin: 24px 0;
+    color: var(--text-muted);
+    font-size: 1.05rem;
+    font-style: italic;
+  }
+  .skill-tag {
+    display: inline-block;
+    background: rgba(108,99,255,0.12);
+    border: 1px solid rgba(108,99,255,0.25);
+    border-radius: 30px;
+    padding: 5px 16px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #a89cff;
+    margin: 4px;
+    transition: background 0.2s, transform 0.2s;
+  }
+  .skill-tag:hover { background: rgba(108,99,255,0.22); transform: translateY(-2px); }
+
+  /* ─── TRAINER ─── */
+  .trainer-card {
+    background: linear-gradient(145deg, var(--bg-card) 0%, #0e1629 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 40px;
+    display: flex;
+    gap: 36px;
+    align-items: flex-start;
+    box-shadow: var(--glow);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  .trainer-card:hover { transform: translateY(-4px); box-shadow: 0 20px 60px rgba(108,99,255,0.25); }
+  .trainer-card::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-1), var(--accent-2), var(--accent-3));
+  }
+  .trainer-avatar {
+    width: 110px; height: 110px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-1), var(--accent-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.4rem;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+    position: relative;
+    border: 3px solid rgba(255,255,255,0.1);
+  }
+  .trainer-avatar::after {
+    content: '✓';
+    position: absolute;
+    bottom: 2px; right: 2px;
+    width: 26px; height: 26px;
+    background: #00d4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #000;
+    border: 2px solid var(--bg-card);
+  }
+  .trainer-name { font-size: 1.5rem; font-weight: 800; margin-bottom: 4px; }
+  .trainer-role {
+    font-size: 0.85rem;
+    color: var(--accent-2);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 14px;
+  }
+  .exp-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0,212,255,0.1);
+    border: 1px solid rgba(0,212,255,0.25);
+    border-radius: 30px;
+    padding: 4px 14px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    color: var(--accent-2);
+    margin-right: 8px;
+    margin-bottom: 8px;
+  }
+  .trainer-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-top: 20px;
+  }
+  .t-stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+  .t-stat-num { font-family: 'Syne', sans-serif; font-size: 1.4rem; font-weight: 800; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .t-stat-label { font-size: 0.72rem; color: var(--text-muted); margin-top: 2px; }
+
+  /* ─── ROADMAP ─── */
+  .roadmap-section { position: relative; }
+  .roadmap-phase {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    margin-bottom: 24px;
+    position: relative;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+  }
+  .roadmap-phase:hover { border-color: var(--accent-1); box-shadow: 0 8px 40px rgba(108,99,255,0.15); transform: translateX(4px); }
+  .phase-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+  .phase-num {
+    width: 44px; height: 44px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--accent-1), #8a63ff);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Syne', sans-serif;
+    font-weight: 800;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+  }
+  .phase-title-text { font-size: 1.15rem; font-weight: 700; }
+  .phase-subtitle { font-size: 0.82rem; color: var(--text-muted); margin-top: 2px; }
+  .roadmap-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    font-size: 0.9rem;
+    color: #c8d0e7;
+  }
+  .roadmap-item:last-child { border-bottom: none; }
+  .roadmap-item .num-badge {
+    min-width: 26px; height: 26px;
+    background: rgba(108,99,255,0.15);
+    border: 1px solid rgba(108,99,255,0.3);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--accent-1);
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .roadmap-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding: 6px 0;
+    width: 30px;
+  }
+  .connector-line { width: 2px; height: 32px; background: linear-gradient(to bottom, var(--accent-1), rgba(108,99,255,0)); }
+
+  .azure-card {
+    background: linear-gradient(135deg, rgba(0,120,212,0.12) 0%, rgba(108,99,255,0.1) 100%);
+    border: 1px solid rgba(0,120,212,0.3);
+    border-radius: var(--radius);
+    padding: 28px 32px;
+    margin-top: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .azure-card::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: -1px; right: -1px;
+    height: 3px;
+    background: linear-gradient(90deg, #0078d4, var(--accent-1));
+  }
+
+  /* ─── FULLSTACK ─── */
+  .fullstack-section {
+    background: linear-gradient(135deg, rgba(108,99,255,0.08) 0%, rgba(0,212,255,0.05) 100%);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 60px;
+    position: relative;
+    overflow: hidden;
+  }
+  .fullstack-section::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(0,212,255,0.08), transparent 70%);
+    border-radius: 50%;
+  }
+  .fs-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 20px;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(255,255,255,0.06);
+    border-radius: 12px;
+    margin-bottom: 12px;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .fs-item:hover { background: rgba(108,99,255,0.1); border-color: rgba(108,99,255,0.3); transform: translateX(6px); }
+  .fs-icon {
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1rem;
+    flex-shrink: 0;
+  }
+
+  /* ─── FEATURES ─── */
+  .feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 32px 28px;
+    height: 100%;
+    transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .feature-card:hover { transform: translateY(-6px); box-shadow: 0 20px 50px rgba(108,99,255,0.2); border-color: rgba(108,99,255,0.4); }
+  .feature-icon {
+    width: 56px; height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 18px;
+  }
+  .feature-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+  .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; }
+  .feature-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    opacity: 0;
+    border-radius: 0 0 var(--radius) var(--radius);
+    transition: opacity 0.3s;
+  }
+  .feature-card:hover::after { opacity: 1; }
+  .f1::after { background: linear-gradient(90deg, var(--accent-1), var(--accent-2)); }
+  .f2::after { background: linear-gradient(90deg, var(--accent-2), #00ff88); }
+  .f3::after { background: linear-gradient(90deg, var(--accent-gold), var(--accent-3)); }
+  .f4::after { background: linear-gradient(90deg, var(--accent-3), var(--accent-1)); }
+  .f5::after { background: linear-gradient(90deg, #00ff88, var(--accent-2)); }
+
+  /* ─── INSPIRATION ─── */
+  .inspire-section { background: var(--bg-deep); padding: 80px 0; }
+  .inspire-marquee {
+    overflow: hidden;
+    position: relative;
+    padding: 16px 0;
+  }
+  .inspire-marquee::before, .inspire-marquee::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 120px;
+    z-index: 2;
+  }
+  .inspire-marquee::before { left: 0; background: linear-gradient(to right, var(--bg-deep), transparent); }
+  .inspire-marquee::after { right: 0; background: linear-gradient(to left, var(--bg-deep), transparent); }
+  .marquee-track {
+    display: flex;
+    gap: 0;
+    animation: marquee 22s linear infinite;
+    width: max-content;
+  }
+  .inspire-quote-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 22px 32px;
+    margin: 0 12px;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+  .q-icon { font-size: 1.4rem; }
+  .q-text { font-family: 'Syne', sans-serif; font-weight: 700; font-size: 1rem; }
+  .q-accent { color: var(--accent-1); }
+
+  /* ─── CTA ─── */
+  .cta-section {
+    padding: 100px 0;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-bg {
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse 80% 60% at 50% 100%, rgba(108,99,255,0.18) 0%, transparent 65%);
+  }
+  .cta-card {
+    background: linear-gradient(135deg, rgba(108,99,255,0.1), rgba(0,212,255,0.07));
+    border: 1px solid rgba(108,99,255,0.3);
+    border-radius: 28px;
+    padding: 72px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .cta-card::before {
+    content: '';
+    position: absolute;
+    top: -1px; left: 20%; right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent-1), var(--accent-2), transparent);
+  }
+  .cta-card h2 { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; letter-spacing: -1px; margin-bottom: 16px; }
+  .cta-card p { color: var(--text-muted); font-size: 1.05rem; max-width: 460px; margin: 0 auto 36px; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: rgba(5,8,16,0.95);
+    border-top: 1px solid var(--border);
+    padding: 48px 0 32px;
+  }
+  .footer-brand { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.4rem; background: linear-gradient(135deg, var(--accent-1), var(--accent-2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .footer-tagline { color: var(--text-muted); font-size: 0.85rem; margin-top: 6px; }
+  .social-btn {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    border: 1px solid var(--border);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: background 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
+    margin-right: 8px;
+  }
+  .social-btn:hover { background: var(--accent-1); color: #fff; border-color: var(--accent-1); transform: translateY(-3px); }
+  .footer-divider { border-color: var(--border); margin: 28px 0; }
+  .footer-copy { font-size: 0.8rem; color: var(--text-muted); }
+
+  /* ─── ANIMATIONS ─── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(28px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeLeft {
+    from { opacity: 0; transform: translateX(40px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  @keyframes floatY {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @keyframes pulse {
+    0%,100% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.5; transform: scale(0.8); }
+  }
+  @keyframes marquee {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  @keyframes rotate360 {
+    to { transform: rotate(360deg); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(36px);
+    transition: opacity 0.7s cubic-bezier(0.23,1,0.32,1), transform 0.7s cubic-bezier(0.23,1,0.32,1);
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.1s; }
+  .reveal-delay-2 { transition-delay: 0.2s; }
+  .reveal-delay-3 { transition-delay: 0.3s; }
+  .reveal-delay-4 { transition-delay: 0.4s; }
+  .reveal-delay-5 { transition-delay: 0.5s; }
+
+  /* ─── MOBILE NAV ─── */
+  .navbar-toggler { border-color: var(--border); }
+  .navbar-toggler-icon { filter: invert(1); }
+  .navbar-collapse { background: rgba(5,8,16,0.97); padding: 16px 0; border-radius: var(--radius); margin-top: 8px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 991px) {
+    .trainer-card { flex-direction: column; }
+    .trainer-stats { grid-template-columns: repeat(3,1fr); }
+    .fullstack-section { padding: 40px 30px; }
+    .cta-card { padding: 48px 28px; }
+  }
+  @media (max-width: 576px) {
+    .hero-stats { gap: 20px; }
+    .stat-num { font-size: 1.6rem; }
+    .trainer-stats { grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .t-stat { padding: 10px 6px; }
+    .t-stat-num { font-size: 1.1rem; }
+    .roadmap-phase { padding: 22px 18px; }
+  }
+
+  /* ─── DIVIDER ORNAMENT ─── */
+  .ornament-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 10px 0 48px;
+  }
+  .ornament-divider span { height: 1px; flex: 1; background: linear-gradient(to right, transparent, var(--border), transparent); }
+  .ornament-divider i { color: var(--accent-1); font-size: 0.7rem; }
+
+  .nav-dots {
+    position: fixed;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 900;
+  }
+  .nav-dot {
+    width: 8px; height: 8px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.2);
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+  }
+  .nav-dot.active { background: var(--accent-1); transform: scale(1.3); }
+  @media (max-width: 768px) { .nav-dots { display: none; } }
+</style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <div class="brand-icon">DA</div>
-                <span class="brand-text">DevAnalytiq</span>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#experience" class="nav-link">experience</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#contact" class="nav-link">Contact</a>
-            </div>
-            <div class="nav-actions">
-                <button class="theme-toggle" id="theme-toggle">
-                    <span class="sun-icon">☀️</span>
-                    <span class="moon-icon">🌙</span>
-                </button>
-                <<a href="https://drive.google.com/uc?export=download&id=10-8QGe7RTCAmNj52hb-xo8bOh14Z43kL" class="resume-btn" target="_blank">
-  <span>📄</span> Resume
-</a>
 
-                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-    </nav>
+<!-- NAV DOTS -->
+<div class="nav-dots" id="navDots">
+  <div class="nav-dot active" data-target="hero" title="Home"></div>
+  <div class="nav-dot" data-target="about" title="About"></div>
+  <div class="nav-dot" data-target="trainer" title="Trainer"></div>
+  <div class="nav-dot" data-target="roadmap" title="Roadmap"></div>
+  <div class="nav-dot" data-target="fullstack" title="Full Stack"></div>
+  <div class="nav-dot" data-target="features" title="Features"></div>
+  <div class="nav-dot" data-target="cta" title="Join"></div>
+</div>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <div class="hero-badge">
-                Analyzing Problems. Developing Solutions.
-            </div>
-            <h1 class="hero-title">Crafting AI-Powered Solutions</h1>
-            <p class="hero-subtitle">
-                with <span class="highlight-blue">Code</span>, 
-                <span class="highlight-purple">Logic</span>, and 
-                <span class="highlight-green">Precision</span>
-            </p>
-            <div class="hero-typing">
-                Specializing in <span id="typing-text"></span><span class="cursor">|</span>
-            </div>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Get In Touch</a>
-            </div>
-            <div class="hero-social">
-                <a href="https://github.com/lakshmanasai5421" target="_blank" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                    </svg>
-                </a>
-                <a href="https://www.linkedin.com/in/lakshmana-sai-karumuri-816538265/" target="_blank" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                    </svg>
-                </a>
-                <a href="mailto:devanalytiq@gmail.com" class="social-link">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 0 1 0 19.366V5.457c0-.904.732-1.636 1.636-1.636h.749L12 10.724l9.615-6.903h.749c.904 0 1.636.732 1.636 1.636z"/>
-                    </svg>
-                </a>
-                <a href="https://www.instagram.com/lakshmana_sai_/" target="_blank" class="social-btn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.322 3.608 1.297.975.975 1.235 2.242 1.297 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.322 2.633-1.297 3.608-.975.975-2.242 1.235-3.608 1.297-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.322-3.608-1.297-.975-.975-1.235-2.242-1.297-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.322-2.633 1.297-3.608.975-.975 2.242-1.235 3.608-1.297C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.771.13 4.583.387 3.596 1.374 2.608 2.361 2.351 3.549 2.293 4.83.014 5.111 0 5.519 0 9.777v4.446c0 4.258.014 4.666.072 5.946.058 1.281.315 2.469 1.303 3.456.987.987 2.175 1.244 3.456 1.303 1.28.058 1.688.072 5.946.072s4.666-.014 5.946-.072c1.281-.058 2.469-.315 3.456-1.303.987-.987 1.244-2.175 1.303-3.456.058-1.28.072-1.688.072-5.946s-.014-4.666-.072-5.946c-.058-1.281-.315-2.469-1.303-3.456-.987-.987-2.175-1.244-3.456-1.303C16.666.014 16.258 0 12 0z"/>
-        <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
-        <circle cx="18.406" cy="5.594" r="1.44"/>
-    </svg>
-</a>
-
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-arrow">↓</div>
-        </div>
-    </section>
-
-   <!-- About Section -->
-<section id="about" class="about">
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">About Me</h2>
-      <p class="section-subtitle">
-        Welcome to DevAnalytiq – I’m a Freelance Python Developer and Data Analyst.  
-  I specialize in building backend systems, automating workflows, and analyzing data to deliver reliable, efficient, and scalable solutions.
+    <a class="navbar-brand" href="#">DevAnalytiq</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#trainer">Trainer</a></li>
+        <li class="nav-item"><a class="nav-link" href="#roadmap">Roadmap</a></li>
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item ms-lg-2"><a class="nav-link nav-cta" href="#cta">Enroll Now</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="hero-badge">
+          <span></span>
+          PROGRAM FOR NEXTGEN GRADUATES
+        </div>
+        <h1>
+          Transform Your<br>Future with
+          <span class="grad"> Python<br>& Data Skills</span>
+        </h1>
+        <p class="hero-sub">From Zero to Industry-Ready — Build real skills that matter. Land the career you deserve with hands-on experience and mentorship from a practicing Data Engineer.</p>
+        <div class="d-flex flex-wrap gap-3" style="animation: fadeUp 1s 0.25s ease both;">
+          <a href="#cta" class="btn-primary-grad">
+            Start Learning Now
+            <i class="fas fa-arrow-right" style="font-size:0.85rem;"></i>
+          </a>
+          <a href="#roadmap" class="btn-outline-grad">
+            View Roadmap
+            <i class="fas fa-map" style="font-size:0.85rem;"></i>
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <div class="stat-num">40+</div>
+            <div class="stat-label">Projects Built</div>
+          </div>
+          <div class="stat-item" style="border-left: 1px solid var(--border); padding-left: 32px;">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Years Industry Exp</div>
+          </div>
+          <div class="stat-item" style="border-left: 1px solid var(--border); padding-left: 32px;">
+            <div class="stat-num">5+</div>
+            <div class="stat-label">Tech Domains</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-visual">
+          <div class="floating-pill p1" style="color:#a89cff;">
+            <span class="pill-dot" style="background: var(--accent-1);"></span>
+            ML Model Accuracy: 98.0%
+          </div>
+          <div class="hero-card-main">
+            <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+              <div style="width:12px;height:12px;border-radius:50%;background:#ff5f57;"></div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#ffbd2e;"></div>
+              <div style="width:12px;height:12px;border-radius:50%;background:#28ca42;"></div>
+              <span style="margin-left:8px;font-size:0.75rem;color:var(--text-muted);font-family:'Courier New',monospace;">model_training.py</span>
+            </div>
+            <div class="code-block">
+              <div><span class="code-cm"># DevAnalytiq — Real-world ML Pipeline</span></div>
+              <div><span class="code-kw">import</span> <span class="code-fn">pandas</span> <span class="code-kw">as</span> pd</div>
+              <div><span class="code-kw">from</span> <span class="code-fn">sklearn.ensemble</span> <span class="code-kw">import</span> RandomForestClassifier</div>
+              <div>&nbsp;</div>
+              <div><span class="code-kw">def</span> <span class="code-fn">train_model</span>(data_path):</div>
+              <div>&nbsp;&nbsp;df = pd.<span class="code-fn">read_csv</span>(data_path)</div>
+              <div>&nbsp;&nbsp;X, y = df.drop(<span class="code-str">'target'</span>, axis=<span class="code-num">1</span>), df[<span class="code-str">'target'</span>]</div>
+              <div>&nbsp;&nbsp;model = <span class="code-fn">RandomForestClassifier</span>()</div>
+              <div>&nbsp;&nbsp;model.<span class="code-fn">fit</span>(X, y)</div>
+              <div>&nbsp;&nbsp;<span class="code-kw">return</span> model</div>
+              <div>&nbsp;</div>
+              <div><span class="code-cm"># Accuracy: 98.0% — Built at DevAnalytiq</span></div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px;margin-top:18px;padding-top:16px;border-top:1px solid rgba(255,255,255,0.05);">
+              
+          </div>
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- TRADITIONAL SYSTEM PROBLEM -->
+<section class="section" id="reality">
+  <div class="container">
+    
+    <div class="text-center mb-5">
+      <div class="section-tag" style="justify-content:center;">Reality Check</div>
+      <h2 class="section-title">
+        The Problem with <span style="color:var(--accent-3);">Traditional Learning</span>
+      </h2>
+      <p class="section-sub mx-auto">
+        Why most students feel confused — even after completing their degree
       </p>
     </div>
-    <div class="about-content two-columns">
-      <div class="about-text">
-        <div class="about-card">
-          <h3>Hi, I'm Lakshmana Sai Karumuri</h3>
+
+    <div class="row g-4">
+
+      <!-- Problem Card 1 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h4>Too Much Theory</h4>
           <p>
-            I’m a freelance Python Developer and Data Analyst, passionate about turning raw ideas and messy data into smart, usable solutions.  
-            Through <strong>DevAnalytiq</strong>, I help businesses and individuals build tools, automate workflows, and uncover insights — using Python, Flask, SQL, Pandas, and more.
-          </p>
-          <p>
-            Whether you're looking to build an API, create a data dashboard, or analyze complex datasets — I’m here to help.  
-            I combine clean code with logic and precision to get things done right.
+            Most colleges focus heavily on theory and exams, 
+            but very little on real-world implementation.
           </p>
         </div>
       </div>
 
-      <div class="about-features">
-        <div class="feature-row" style="display: flex; justify-content: center; align-items: flex-start;">
-          <div class="feature-card">
-            <div class="feature-icon">💻</div>
-            <h4>Clean Code</h4>
-            <p>Writing maintainable, efficient code that scales with your business needs.</p>
-          </div>
-          
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-          <div class="feature-card">
-            <div class="feature-icon">🧠</div>
-            <h4>AI Solutions</h4>
-            <p>Leveraging machine learning and AI to solve complex business problems.</p>
-          </div>
-          
-          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
-          <div class="feature-card">
-            <div class="feature-icon">⚡</div>
-            <h4>Fast Delivery</h4>
-            <p>Quick turnaround times without compromising on quality or precision.</p>
-          </div>
+      <!-- Problem Card 2 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h4>No Real Projects</h4>
+          <p>
+            Students graduate without building actual projects 
+            that companies expect during interviews.
+          </p>
         </div>
       </div>
+
+      <!-- Problem Card 3 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h4>Outdated Curriculum</h4>
+          <p>
+            Technology evolves fast, but college syllabus updates slowly,
+            creating a huge gap.
+          </p>
+        </div>
+      </div>
+
+      <!-- Problem Card 4 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h4>No Industry Exposure</h4>
+          <p>
+            Students are not exposed to real tools, workflows, 
+            or industry-level problem solving.
+          </p>
+        </div>
+      </div>
+
+      <!-- Problem Card 5 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card">
+          <h4>Lack of Direction</h4>
+          <p>
+            Many students don’t know what to learn, 
+            where to start, or how to become job-ready.
+          </p>
+        </div>
+      </div>
+
+      <!-- Problem Card 6 -->
+      <div class="col-md-6 col-lg-4">
+        <div class="feature-card" style="background:linear-gradient(135deg,rgba(255,101,132,0.1),rgba(108,99,255,0.08));border-color:rgba(255,101,132,0.3);">
+          <h4>Result?</h4>
+          <p>
+            Students complete their degree…
+            but still feel unprepared for real jobs.
+          </p>
+        </div>
+      </div>
+
     </div>
+
+    <!-- Bottom Human Line -->
+    <div class="text-center mt-5">
+      <p style="color:#b0b8d1;max-width:650px;margin:auto;font-size:1rem;">
+        This is not your fault.  
+        The system was not designed for today’s industry needs.
+        <br><br>
+        But the good news is — you can fix it.
+      </p>
+    </div>
+
   </div>
 </section>
 
-   <section id="experience" class="experience">
+
+
+
+
+<!-- ABOUT -->
+<section class="section section-alt" id="about">
   <div class="container">
-    <div class="section-header">
-      <h2 class="section-title">Experience</h2>
-      <p class="section-subtitle">Internships that shaped my skills and expertise</p>
-    </div>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3 class="company">Dr Reddy Tech Foundation</h3>
-        <p class="role">Data Science Trainee</p>
-        <span class="duration">May 2025 – Present</span>
+    <div class="row g-5 align-items-center">
+      <div class="col-lg-5 reveal">
+        <div class="section-tag">About Us</div>
+        <h2 class="section-title">Where Skills Meet<br><span style="color:var(--accent-2);">Industry Reality</span></h2>
+        <p class="section-sub">We don't just teach Python. We help you understand what actually matters in the industry
+through real projects, not just theory.</p>
       </div>
-      <div class="timeline-item">
-        <h3 class="company">Plumsoft</h3>
-        <p class="role">Python Developer Intern</p>
-        <span class="duration">Jan 2025 – May 2025</span>
-      </div>
-      <div class="timeline-item">
-        <h3 class="company">VMTS Pharma Software</h3>
-        <p class="role">Frontend Intern (Angular)</p>
-        <span class="duration">Jun 2024 – Jul 2024</span>
-      </div>
-      <div class="timeline-item">
-        <h3 class="company">Coincent AI</h3>
-        <p class="role">AI Intern</p>
-        <span class="duration">Jul 2023 – Aug 2023</span>
+      <div class="col-lg-7 reveal reveal-delay-2">
+        <div class="about-card">
+          <p style="font-size:1.05rem;color:var(--text-muted);line-height:1.85;">
+  Most students follow the college syllabus without knowing what actually matters in the industry.
+
+  The problem is it’s often outdated and doesn’t prepare you for real-world roles.
+
+  At DevAnalytiq, we focus on building practical skills through real-time projects,
+  so you can understand how things actually work in the industry.
+</p>
+
+<div class="about-highlight">
+  "Companies don’t hire based on syllabus they hire based on skills."
+</div>
+          <p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:20px;">Our curriculum is shaped by real industry work not textbooks. Every module, every project, every concept comes directly from what's being used in production environments today.</p>
+          <div>
+            <span class="skill-tag"><i class="fas fa-brain me-1"></i> Machine Learning</span>
+            <span class="skill-tag"><i class="fas fa-language me-1"></i> NLP</span>
+            <span class="skill-tag"><i class="fas fa-code me-1"></i> Full Stack</span>
+            <span class="skill-tag"><i class="fas fa-microphone me-1"></i> Audio Processing</span>
+            <span class="skill-tag"><i class="fas fa-image me-1"></i> Image Processing</span>
+            <span class="skill-tag"><i class="fas fa-database me-1"></i> Data Engineering</span>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- TRAINER -->
+<section class="section" id="trainer">
+  <div class="container">
+    
+    <div class="text-center mb-5 reveal">
+      <div class="section-tag" style="justify-content:center;">Meet Your Trainers</div>
+      <h2 class="section-title">
+        Learn From People <br>
+        <span style="color:var(--accent-1);">Who Work In The Industry</span>
+      </h2>
+    </div>
 
+    <div class="row g-4 justify-content-center">
 
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">A showcase of innovative solutions across machine learning, Python development, and data science</p>
+      <!-- TRAINER 1 -->
+      <div class="col-lg-6 reveal">
+        <div class="trainer-card h-100">
+          
+          <div>
+            <div class="trainer-avatar">
+              <img src="sai.jpg" alt="Lakshmana Sai" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
             </div>
-           <div class="projects-grid">
-  <div class="project-card">
-    <div class="project-icon">📈</div>
-    <h3 class="project-title">Smart Stock Predictions with ML</h3>
-    <p class="project-tech">ARIMA, LSTM, Python</p>
-    <p class="project-description">Advanced time series forecasting for stock market analysis</p>
-    <div class="project-actions">
-      <a href="https://github.com/lakshmanasai5421/Smart-Stock-Predictions-with-ML" target="_blank" class="btn btn-small">Learn More</a>
-      <a href="https://github.com/lakshmanasai5421/Smart-Stock-Predictions-with-ML" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
+          </div>
+
+          <div class="flex-grow-1">
+            <div class="trainer-name">Lakshmana Sai Karumuri</div>
+            <div class="trainer-role">
+              <i class="fas fa-building me-1"></i> Data Engineer @ Cynosure Software Solution
+            </div>
+
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">
+              Hi, I’m Sai 👋  
+              I was once confused about what to learn — just like most students.
+              After working on real projects and entering the industry,
+              I understood what actually matters.
+            </p>
+
+            <ul style="color:var(--text-muted);font-size:0.88rem;padding-left:18px;">
+              <li>1.5+ years industry experience</li>
+              <li>40+ real-world projects</li>
+              <li>Focus on practical learning (not theory)</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+      <!-- TRAINER 2 -->
+      <div class="col-lg-6 reveal reveal-delay-2">
+        <div class="trainer-card h-100">
+
+          <div>
+            <div class="trainer-avatar">
+              <img src="aravind.jpg" alt="Aravind Reddy" style="width:100%;height:100%;border-radius:50%;object-fit:cover;">
+            </div>
+          </div>
+
+          <div class="flex-grow-1">
+            <div class="trainer-name">Aravind Reddy</div>
+            <div class="trainer-role">
+              <i class="fas fa-building me-1"></i> Senior Trainer @ DRFGrowTech
+            </div>
+
+            <p style="color:var(--text-muted);font-size:0.9rem;margin-top:10px;">
+              Aravind Reddy brings 10+ years of teaching experience,
+              helping thousands of students understand complex topics
+              in a simple and practical way.
+            </p>
+
+            <ul style="color:var(--text-muted);font-size:0.88rem;padding-left:18px;">
+              <li>10+ years training experience</li>
+              <li>Expert in simplifying complex concepts</li>
+              <li>Strong focus on student understanding</li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ROADMAP -->
+<section class="section section-alt roadmap-section" id="roadmap">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-tag" style="justify-content:center;">Curriculum</div>
+      <h2 class="section-title">Complete Learning<br><span style="color:var(--accent-2);">Roadmap</span></h2>
+      <p class="section-sub mx-auto">DevAnalytiq presents — Program for NextGen Graduates</p>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="roadmap-phase reveal reveal-delay-1">
+      <div class="phase-header">
+        <div class="phase-num">01</div>
+        <div>
+          <div class="phase-title-text">Python Basic Concepts</div>
+          <div class="phase-subtitle">Foundation for every data journey</div>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge">1</div>What is Language Processing Systems (compiler)</div>
+          <div class="roadmap-item"><div class="num-badge">2</div>What is Python</div>
+          <div class="roadmap-item"><div class="num-badge">3</div>Data types</div>
+          <div class="roadmap-item"><div class="num-badge">4</div>Strings and string functions</div>
+          <div class="roadmap-item"><div class="num-badge">5</div>Operators</div>
+          <div class="roadmap-item"><div class="num-badge">6</div>Type conversions</div>
+        </div>
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge">7</div>Control statements</div>
+          <div class="roadmap-item"><div class="num-badge">8</div>Conditional statements</div>
+          <div class="roadmap-item"><div class="num-badge">9</div>Working with list, list comprehension and Dictionary</div>
+          <div class="roadmap-item"><div class="num-badge">10</div>Functions</div>
+          <div class="roadmap-item"><div class="num-badge">11</div>File Operations</div>
+          <div class="roadmap-item"><div class="num-badge">12</div>Errors and Exceptions</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-connector mx-auto reveal">
+      <div class="connector-line"></div>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(0,212,255,0.2);">
+      <div class="phase-header">
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-2),#0099cc);">02</div>
+        <div>
+          <div class="phase-title-text">Advanced Topics</div>
+          <div class="phase-subtitle">Power tools for data professionals</div>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">13</div>Object Oriented Programming</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">14</div>NumPy</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">15</div>Pandas</div>
+        </div>
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">16</div>Matplotlib</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">17</div>Seaborn</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-2);border-color:rgba(0,212,255,0.3);background:rgba(0,212,255,0.08);">18</div>Scikit-learn</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-connector mx-auto reveal">
+      <div class="connector-line" style="background:linear-gradient(to bottom,var(--accent-gold),rgba(244,185,66,0));"></div>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(244,185,66,0.2);">
+      <div class="phase-header">
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-gold),#e07b00);">03</div>
+        <div>
+          <div class="phase-title-text">Statistics for Machine Learning</div>
+          <div class="phase-subtitle">If you're enthusiastic about machine learning, you need to learn statistics.</div>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-gold);border-color:rgba(244,185,66,0.3);background:rgba(244,185,66,0.08);">1</div>Descriptive statistics</div>
+        </div>
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge" style="color:var(--accent-gold);border-color:rgba(244,185,66,0.3);background:rgba(244,185,66,0.08);">2</div>Ineffectual statistics</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="roadmap-connector mx-auto reveal">
+      <div class="connector-line" style="background:linear-gradient(to bottom,#ff6584,rgba(255,101,132,0));"></div>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(255,101,132,0.2);">
+      <div class="phase-header">
+        <div class="phase-num" style="background:linear-gradient(135deg,var(--accent-3),#cc0055);">04</div>
+        <div>
+          <div class="phase-title-text">Data Visualization</div>
+          <div class="phase-subtitle">Using Matplotlib and Seaborn</div>
+        </div>
+      </div>
+      <div class="roadmap-item" style="border:none;">
+        <div class="num-badge" style="color:var(--accent-3);border-color:rgba(255,101,132,0.3);background:rgba(255,101,132,0.08);">★</div>
+        Comprehensive data visualization using Matplotlib and Seaborn with real datasets
+      </div>
+    </div>
+
+    <div class="roadmap-connector mx-auto reveal">
+      <div class="connector-line" style="background:linear-gradient(to bottom,#00ff88,rgba(0,255,136,0));"></div>
+    </div>
+
+    <!-- Phase 5 -->
+    <div class="roadmap-phase reveal reveal-delay-1" style="border-color:rgba(0,255,136,0.2);">
+      <div class="phase-header">
+        <div class="phase-num" style="background:linear-gradient(135deg,#00cc6a,#007a3d);">05</div>
+        <div>
+          <div class="phase-title-text">Machine Learning with Scikit-learn</div>
+          <div class="phase-subtitle">Live coding, execution, and model evaluation</div>
+        </div>
+      </div>
+      <div class="row g-2">
+        <div class="col-md-6">
+          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">1</div>Intro to Machine Learning</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">2</div>Machine Learning types</div>
+                              <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">3</div>Machine learning model development workflow </div>
+
+        </div>
+        <div class="col-md-6">
+
+          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">4</div>Brief explanation on machine learning algorithms with live coding and execution</div>
+          <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">5</div>Performance Evaluation Matrix for model</div>
+                            <div class="roadmap-item"><div class="num-badge" style="color:#00cc6a;border-color:rgba(0,204,106,0.3);background:rgba(0,204,106,0.08);">6</div>Predictions generated by the model </div>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Azure Special Card -->
+    <div class="azure-card reveal mt-4">
+      <div class="d-flex align-items-start gap-3">
+        <div style="background:rgba(0,120,212,0.2);border:1px solid rgba(0,120,212,0.4);border-radius:12px;padding:10px 14px;font-size:1.4rem;flex-shrink:0;">☁</div>
+        <div>
+          <div style="font-family:'Syne',sans-serif;font-weight:700;font-size:1.05rem;margin-bottom:6px;color:var(--accent-2);">Bonus: Azure AZ-104 Certification Concepts</div>
+          <p style="color:var(--text-muted);font-size:0.9rem;margin:0;">Additional Azure AZ-104 certification concepts explained in detail — giving you a competitive edge in cloud-ready job roles.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section class="section section-alt" id="features">
+  <div class="container">
+    <div class="text-center mb-5 reveal">
+      <div class="section-tag" style="justify-content:center;">Why DevAnalytiq</div>
+      <h2 class="section-title">Everything You Need<br>to <span style="color:var(--accent-1);">Succeed</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="feature-card f1">
+          <div class="feature-icon" style="background:rgba(108,99,255,0.15);">
+            <i class="fas fa-seedling" style="color:var(--accent-1);"></i>
+          </div>
+          <h4>Beginner Friendly</h4>
+          <p>No prior coding experience needed. We start from absolute zero with crystal-clear explanations and a supportive learning environment.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-2">
+        <div class="feature-card f2">
+          <div class="feature-icon" style="background:rgba(0,212,255,0.12);">
+            <i class="fas fa-industry" style="color:var(--accent-2);"></i>
+          </div>
+          <h4>Industry-Level Projects</h4>
+          <p>Build 40+ projects that mirror real production systems. Your portfolio will speak louder than any certificate.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-3">
+        <div class="feature-card f3">
+          <div class="feature-icon" style="background:rgba(244,185,66,0.12);">
+            <i class="fas fa-hands-helping" style="color:var(--accent-gold);"></i>
+          </div>
+          <h4>Hands-on Learning</h4>
+          <p>Every concept is immediately applied through live coding sessions and guided project work — no passive lectures.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-4">
+        <div class="feature-card f4">
+          <div class="feature-icon" style="background:rgba(255,101,132,0.12);">
+            <i class="fas fa-bullseye" style="color:var(--accent-3);"></i>
+          </div>
+          <h4>Career Focused</h4>
+          <p>Our curriculum is designed around what employers actually hire for. From day one, we're training you for the job market.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-5">
+        <div class="feature-card f5">
+          <div class="feature-icon" style="background:rgba(0,255,136,0.1);">
+            <i class="fas fa-lightbulb" style="color:#00cc6a;"></i>
+          </div>
+          <h4>Real-time Examples</h4>
+          <p>Learn with examples drawn straight from production systems at real companies — not contrived textbook problems.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4 reveal reveal-delay-1">
+        <div class="feature-card" style="background:linear-gradient(135deg,rgba(108,99,255,0.12),rgba(0,212,255,0.07));border-color:rgba(108,99,255,0.3);">
+          <div class="feature-icon" style="background:rgba(108,99,255,0.2);">
+            <i class="fas fa-star" style="color:var(--accent-gold);"></i>
+          </div>
+          <h4>Azure Cloud Bonus</h4>
+          <p>Get a head start with AZ-104 certification concepts included in the curriculum — no extra cost, massive extra value.</p>
+        </div>
+      </div>
     </div>
   </div>
+</section>
 
-
-                <div class="project-card">
-  <div class="project-icon">📰</div>
-  <h3 class="project-title">Fake News Identification</h3>
-  <p class="project-tech">NLP, Machine Learning</p>
-  <p class="project-description">AI-powered fake news detection using natural language processing</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/NEWS-CLASSIFICATION" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/NEWS-CLASSIFICATION" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
+<!-- INSPIRATION MARQUEE -->
+<section class="inspire-section">
+  <div class="container mb-4 reveal">
+    <div class="text-center">
+      <div class="section-tag" style="justify-content:center;">Mindset</div>
+      <h2 class="section-title">The Philosophy<br>That <span style="color:var(--accent-2);">Drives Us</span></h2>
+    </div>
   </div>
-</div>
-
-                <div class="project-card">
-  <div class="project-icon">📅</div>
-  <h3 class="project-title">Smart Appointment Scheduler</h3>
-  <p class="project-tech">Python, Google Calendar API</p>
-  <p class="project-description">Intelligent scheduling system with calendar integration</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/-Smart-Appointment-Scheduler-with-Voice-Input-and-Google-Calendar-Integration-" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/-Smart-Appointment-Scheduler-with-Voice-Input-and-Google-Calendar-Integration-" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
+  <div class="inspire-marquee">
+    <div class="marquee-track" id="marqueeTrack">
+      <div class="inspire-quote-card">
+        <span class="q-icon">✦</span>
+        <span class="q-text q-accent">Start where you are.</span>
+        <span class="q-text" style="color:var(--text-muted);">Build what matters.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">⚡</span>
+        <span class="q-text" style="color:var(--accent-2);">Consistency</span>
+        <span class="q-text" style="color:var(--text-muted);">beats talent.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">🔮</span>
+        <span class="q-text" style="color:var(--accent-gold);">Your future</span>
+        <span class="q-text" style="color:var(--text-muted);">is coded today.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">🚀</span>
+        <span class="q-text q-accent">Learn.</span>
+        <span class="q-text" style="color:var(--accent-2);">Build.</span>
+        <span class="q-text" style="color:var(--accent-gold);">Transform.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">💡</span>
+        <span class="q-text" style="color:var(--accent-3);">Skills</span>
+        <span class="q-text" style="color:var(--text-muted);">outlast degrees.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">🔥</span>
+        <span class="q-text" style="color:#00cc6a);">Code</span>
+        <span class="q-text" style="color:var(--text-muted);">your own destiny.</span>
+      </div>
+      <!-- Duplicate for seamless loop -->
+      <div class="inspire-quote-card">
+        <span class="q-icon">✦</span>
+        <span class="q-text q-accent">Start where you are.</span>
+        <span class="q-text" style="color:var(--text-muted);">Build what matters.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">⚡</span>
+        <span class="q-text" style="color:var(--accent-2);">Consistency</span>
+        <span class="q-text" style="color:var(--text-muted);">beats talent.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">🔮</span>
+        <span class="q-text" style="color:var(--accent-gold);">Your future</span>
+        <span class="q-text" style="color:var(--text-muted);">is coded today.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">🚀</span>
+        <span class="q-text q-accent">Learn.</span>
+        <span class="q-text" style="color:var(--accent-2);">Build.</span>
+        <span class="q-text" style="color:var(--accent-gold);">Transform.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">💡</span>
+        <span class="q-text" style="color:var(--accent-3);">Skills</span>
+        <span class="q-text" style="color:var(--text-muted);">outlast degrees.</span>
+      </div>
+      <div class="inspire-quote-card">
+        <span class="q-icon">🔥</span>
+        <span class="q-text" style="color:#00cc6a;">Code</span>
+        <span class="q-text" style="color:var(--text-muted);">your own destiny.</span>
+      </div>
+    </div>
   </div>
-</div>
+</section>
 
-                         <div class="project-card">
-  <div class="project-icon">📄</div>
-  <h3 class="project-title">PDF Highlighter & Summary</h3>
-  <p class="project-tech">NLP, Python, PDF Processing</p>
-  <p class="project-description">Intelligent PDF processing with summarization capabilities</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/Smart-PDF-Highlighter-Keyword-Summary-Generator" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/Smart-PDF-Highlighter-Keyword-Summary-Generator" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
-  </div>
-</div>
-<div class="project-card">
-  <div class="project-icon">👁️</div>
-  <h3 class="project-title">OCR Text & Image API</h3>
-  <p class="project-tech">OCR, Flask, Python</p>
-  <p class="project-description">Robust optical character recognition API service</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/OCR-Based-Text-Extraction-API-Using-Flask" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/OCR-Based-Text-Extraction-API-Using-Flask" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
-  </div>
-</div>
-
-
-                <div class="project-card">
-  <div class="project-icon">🍽️</div>
-  <h3 class="project-title">Zomato Data Analysis</h3>
-  <p class="project-tech">Python, Pandas, Matplotlib, Seaborn</p>
-  <p class="project-description">Comprehensive restaurant data analysis and visualization</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/Zomato-Data-Analysis-Using-Python-" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/Zomato-Data-Analysis-Using-Python-" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
-  </div>
-</div>
-
-                <div class="project-card">
-  <div class="project-icon">🌸</div>
-  <h3 class="project-title">Iris Flower Classification</h3>
-  <p class="project-tech">Scikit-learn, Machine Learning</p>
-  <p class="project-description">Classic ML classification problem with advanced techniques</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/Iris-Flower-Classification" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/Iris-Flower-Classification" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
-  </div>
-</div>
-
-                <div class="project-card">
-  <div class="project-icon">🛠️</div>
-  <h3 class="project-title">Smart Fixers Web App</h3>
-  <p class="project-tech">HTML/CSS, JavaScript</p>
-  <p class="project-description">Full-stack web application for service management</p>
-  <div class="project-actions">
-    <a href="https://github.com/lakshmanasai5421/Smart-Fixers" target="_blank" class="btn btn-small">Learn More</a>
-    <a href="https://github.com/lakshmanasai5421/Smart-Fixers" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
-  </div>
-</div>
-                <div class="project-card">
-                    <div class="project-icon">📊</div>
-                    <h3 class="project-title">Student Performance Predictor</h3>
-                    <p class="project-tech">Regression, Python, ML</p>
-                    <p class="project-description">Predictive modeling for academic performance analysis</p>
-                    
-<div class="project-actions">
-  <a href="https://github.com/lakshmanasai5421/Student-Performance-Predictor" target="_blank" class="btn btn-small">Learn More</a>
-  <a href="https://github.com/lakshmanasai5421/Student-Performance-Predictor" target="_blank" class="btn btn-icon" title="View on GitHub">🔗</a>
-</div>
-
-                        
-
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">A comprehensive toolkit for building intelligent, scalable solutions</p>
-            </div>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">💻</div>
-                        <h3>Languages</h3>
-                    </div>
-                    <div class="skill-badges">
-                        <span class="badge badge-blue">Python</span>
-                        <span class="badge badge-blue">PHP</span>
-                        <span class="badge badge-blue">HTML</span>
-                        <span class="badge badge-blue">JavaScript</span>
-                        <span class="badge badge-blue">CSS</span>
-                        <span class="badge badge-blue">Bootstrap</span>
-                        <span class="badge badge-blue">SQL</span>
-                        <span class="badge badge-blue">TypeScript</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">🌐</div>
-                        <h3>Frameworks</h3>
-                    </div>
-                    <div class="skill-badges">
-                        <span class="badge badge-green">Flask</span>
-                        <span class="badge badge-green">Angular</span>
-                        <span class="badge badge-green">Node.js</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">🧠</div>
-                        <h3>ML/AI Libraries</h3>
-                    </div>
-                    <div class="skill-badges">
-                        <span class="badge badge-purple">TensorFlow</span>
-                        <span class="badge badge-purple">Scikit-learn</span>
-                        <span class="badge badge-purple">Pandas</span>
-                        <span class="badge badge-purple">NumPy</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">📊</div>
-                        <h3>Data & Visualization</h3>
-                    </div>
-                    <div class="skill-badges">
-                        <span class="badge badge-orange">Matplotlib</span>
-                        <span class="badge badge-orange">Seaborn</span>
-                        <span class="badge badge-orange">PowerBI</span>
-                        
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">🔧</div>
-                        <h3>Specialized Tools</h3>
-                    </div>
-                    <div class="skill-badges">
-                        <span class="badge badge-red">pdfplumber</span>
-                        <span class="badge badge-red">pytesseract</span>
-                        <span class="badge badge-red">PyMuPDF</span>
-                        <span class="badge badge-red">OpenCV</span>
-                        <span class="badge badge-red">NLTK</span>
-                    </div>
-                </div>
-                <div class="skill-category">
-                    <div class="skill-header">
-                        <div class="skill-icon">⚙️</div>
-                        <h3>Development Tools</h3>
-                    </div>
-                    <div class="skill-badges">
-                        <span class="badge badge-indigo">GitHub</span>
-                        <span class="badge badge-indigo">VS Code</span>
-                        <span class="badge badge-indigo">Jupyther</span>
-                            
-                    </div>
-                </div>
-            </div>
-            <div class="domain-expertise">
-                <h3>Domain Expertise</h3>
-                <div class="domain-badges">
-                    <span class="badge badge-gradient-1">Machine Learning</span>
-                    <span class="badge badge-gradient-2">Natural Language Processing</span>
-                    <span class="badge badge-gradient-3">Python Development</span>
-                    <span class="badge badge-gradient-4">Data Analysis</span>
-
-                    <span class="badge badge-gradient-4">Data Engineering</span>
-                </div>
-            </div>
-        
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Let's Work Together</h2>
-                <p class="section-subtitle">Ready to turn your ideas into reality? Let's discuss your next project</p>
-            </div>
-            <div class="contact-content">
-                <div class="contact-info">
-                    <div class="contact-card">
-                        <h3>Get in Touch</h3>
-                        <div class="contact-details">
-                            <div class="contact-item">
-                                <div class="contact-icon">📍</div>
-                                <span>Available Worldwide (Remote)</span>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">📞</div>
-                                <span>+91 9398175790</span>
-                            </div>
-                            <div class="contact-item">
-                                <div class="contact-icon">✉️</div>
-                                <span>devanalytiq@gmail.com</span>
-                            </div>
-                        </div>
-                        <div class="social-links">
-                            <h4>Follow Me</h4>
-                            <div class="social-buttons">
-                                <a href="https://github.com/lakshmanasai5421" target="_blank" class="social-btn">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
-                                    </svg>
-                                </a>
-                                <a href="https://www.linkedin.com/in/lakshmana-sai-karumuri-816538265/" target="_blank" class="social-btn">
-                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                        <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                                    </svg>
-                                </a>
-                                <a href="https://www.instagram.com/lakshmana_sai_/" target="_blank" class="social-btn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.366.062 2.633.322 3.608 1.297.975.975 1.235 2.242 1.297 3.608.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.062 1.366-.322 2.633-1.297 3.608-.975.975-2.242 1.235-3.608 1.297-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.366-.062-2.633-.322-3.608-1.297-.975-.975-1.235-2.242-1.297-3.608C2.175 15.747 2.163 15.367 2.163 12s.012-3.584.07-4.85c.062-1.366.322-2.633 1.297-3.608.975-.975 2.242-1.235 3.608-1.297C8.416 2.175 8.796 2.163 12 2.163zm0-2.163C8.741 0 8.332.014 7.052.072 5.771.13 4.583.387 3.596 1.374 2.608 2.361 2.351 3.549 2.293 4.83.014 5.111 0 5.519 0 9.777v4.446c0 4.258.014 4.666.072 5.946.058 1.281.315 2.469 1.303 3.456.987.987 2.175 1.244 3.456 1.303 1.28.058 1.688.072 5.946.072s4.666-.014 5.946-.072c1.281-.058 2.469-.315 3.456-1.303.987-.987 1.244-2.175 1.303-3.456.058-1.28.072-1.688.072-5.946s-.014-4.666-.072-5.946c-.058-1.281-.315-2.469-1.303-3.456-.987-.987-2.175-1.244-3.456-1.303C16.666.014 16.258 0 12 0z"/>
-        <path d="M12 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zm0 10.162a3.999 3.999 0 1 1 0-7.998 3.999 3.999 0 0 1 0 7.998z"/>
-        <circle cx="18.406" cy="5.594" r="1.44"/>
-    </svg>
+<!-- CTA -->
+<section class="cta-section" id="cta">
+  <div class="cta-bg"></div>
+  <div class="container position-relative">
+    <div class="cta-card reveal">
+      <div style="font-size:3rem;margin-bottom:20px;">🎯</div>
+      <h2>Ready to Become a<br><span style="color:var(--accent-1);">Data Professional?</span></h2>
+      <p>Join DevAnalytiq and start building the skills, portfolio, and confidence to land your dream role in tech.</p>
+      <div class="d-flex justify-content-center flex-wrap gap-3">
+        <a href="https://forms.zohopublic.in/lakshmanasaikarumuri2k22gm1/form/PartnershipInquiryForm/formperma/HFTc6rYM7jwkAInFM1e4mPbnS8TiKUqAibnuYRTtFc4" 
+   target="_blank"
+   class="btn-primary-grad" 
+   style="font-size:1.05rem;padding:16px 44px;">
+  Join DevAnalytiq Now
 </a>
-<a href="mailto:devanalytiq@gmail.com" class="social-btn">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 12.713l11.985-7.713A1 1 0 0 0 23 4H1a1 1 0 0 0-.985 1l11.985 7.713z"/>
-        <path d="M12.003 13.953L.065 6.08A1.004 1.004 0 0 0 0 6.996V20a1 1 0 0 0 1 1h22a1 1 0 0 0 1-1V6.996a1.003 1.003 0 0 0-.065-.916l-11.932 7.873z"/>
-    </svg>
-</a>
-
-
-                            </div>
-                        </div>
-                        <a href="https://drive.google.com/uc?export=download&id=10-8QGe7RTCAmNj52hb-xo8bOh14Z43kL" class="resume-btn" target="_blank">
-  <span>📄</span> Resume
-</a>
-
-                    </div>
-                </div>
-                <div class="contact-form-container">
-                    <div class="contact-form-card">
-                        <h3>Send Message</h3>
-                        <div id="success-message" class="success-message" style="display: none;">
-                            We apologize, but this feature is currently under development. You can reach out to us using the details provided in the Get in Touch section.
-                        </div>
-    <form id="contact-form" class="contact-form" action="https://formsubmit.co/devanalytiq@gmail.com" method="POST">
-  <!-- Prevent spam -->
-  <input type="hidden" name="_honey" style="display:none">
-  <input type="hidden" name="_captcha" value="false">
-
-  <!-- Redirect after submit -->
-  <input type="hidden" name="_next" value="https://lakshmanasai5421.github.io/thankyou.html">
-
-  <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" id="name" name="name" required placeholder="Your Name">
-  </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" required placeholder="your@email.com">
-  </div>
-  <div class="form-group">
-    <label for="message">Message</label>
-    <textarea id="message" name="message" required rows="6" placeholder="Tell me about your project..."></textarea>
-  </div>
-
-  <button type="submit" class="btn btn-primary btn-full">
-    <span class="btn-text">📤 Send Message</span>
-    <span class="btn-loading" style="display: none;">⏳ Sending...</span>
-  </button>
-</form>
-
-
-                    </div>
-                </div>
-            </div>
+          Join DevAnalytiq Now
+          <i class="fas fa-rocket" style="font-size:0.9rem;"></i>
+        </a>
+      </div>
+      <div style="margin-top:36px;display:flex;justify-content:center;gap:40px;flex-wrap:wrap;">
+        <div style="text-align:center;">
+          <div style="font-size:1.6rem;font-weight:800;font-family:'Syne',sans-serif;color:var(--accent-2);">40+</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);">Real Projects</div>
         </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="brand-icon">DA</div>
-                    <span class="brand-text">DevAnalytiq</span>
-                </div>
-                <p class="footer-tagline">Analyzing Problems. Developing Solutions.</p>
-                <p class="footer-credit">Made by Lakshmana Sai Karumuri</p>
-                <p class="footer-copyright">© 2025 DevAnalytiq. All rights reserved.</p>
-            </div>
+        <div style="text-align:center;border-left:1px solid var(--border);padding-left:40px;">
+          <div style="font-size:1.6rem;font-weight:800;font-family:'Syne',sans-serif;color:var(--accent-1);">5+</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);">Tech Domains</div>
         </div>
-    </footer>
+        <div style="text-align:center;border-left:1px solid var(--border);padding-left:40px;">
+          <div style="font-size:1.6rem;font-weight:800;font-family:'Syne',sans-serif;color:var(--accent-gold);">∞</div>
+          <div style="font-size:0.8rem;color:var(--text-muted);">Career Potential</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- Scroll to Top Button -->
-    <button id="scroll-to-top" class="scroll-to-top">
-        ↑
-    </button>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <div class="footer-brand">DevAnalytiq</div>
+        <div class="footer-tagline">Built for students with passion to grow</div>
+      </div>
+      <div class="col-md-4 text-md-center mb-4 mb-md-0">
+        <div style="font-size:0.8rem;color:var(--text-muted);">
+          <a href="#about" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">About</a>
+          <a href="#trainer" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Trainer</a>
+          <a href="#roadmap" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Roadmap</a>
+          <a href="#cta" style="color:var(--text-muted);text-decoration:none;margin:0 12px;transition:color 0.2s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='var(--text-muted)'">Enroll</a>
+        </div>
+      </div>
+     
+    </div>
+    <hr class="footer-divider">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <div class="footer-copy",id="year">  © <span id="year"></span> All rights reserved to Lakshmana Sai </div>
 
-    <script src="script.js"></script>
+
+
+
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+
+
+
+
+      <div class="footer-copy">Empowering NextGen Graduates 🚀</div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Intersection Observer for scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+  revealEls.forEach(el => observer.observe(el));
+
+  // Nav dot tracking
+  const sections = ['hero','about','trainer','roadmap','fullstack','features','cta'];
+  const dots = document.querySelectorAll('.nav-dot');
+  const sectionEls = sections.map(id => document.getElementById(id));
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => {
+      sectionEls[i].scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  const dotObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        const idx = sections.indexOf(e.target.id);
+        if (idx !== -1) {
+          dots.forEach(d => d.classList.remove('active'));
+          dots[idx].classList.add('active');
+        }
+      }
+    });
+  }, { threshold: 0.4 });
+  sectionEls.forEach(el => { if(el) dotObserver.observe(el); });
+
+  // Counter animation
+  function animateCounter(el, target, suffix='') {
+    let start = 0;
+    const duration = 1600;
+    const step = 16;
+    const increment = target / (duration / step);
+    const timer = setInterval(() => {
+      start += increment;
+      if (start >= target) {
+        el.textContent = target + suffix;
+        clearInterval(timer);
+      } else {
+        el.textContent = Math.floor(start) + suffix;
+      }
+    }, step);
+  }
+
+  // Navbar scroll effect
+  window.addEventListener('scroll', () => {
+    const nav = document.querySelector('.navbar');
+    if (window.scrollY > 50) {
+      nav.style.background = 'rgba(5,8,16,0.97)';
+    } else {
+      nav.style.background = 'rgba(5,8,16,0.8)';
+    }
+  });
+
+  // Cursor glow (desktop only)
+  if (window.innerWidth > 768) {
+    const glow = document.createElement('div');
+    glow.style.cssText = 'position:fixed;pointer-events:none;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(108,99,255,0.06),transparent 70%);transform:translate(-50%,-50%);transition:left 0.4s ease,top 0.4s ease;z-index:0;';
+    document.body.appendChild(glow);
+    document.addEventListener('mousemove', e => {
+      glow.style.left = e.clientX + 'px';
+      glow.style.top = e.clientY + 'px';
+    });
+  }
+</script>
 </body>
 </html>
